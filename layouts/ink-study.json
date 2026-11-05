@@ -126,14 +126,14 @@
                   "gap": 8,
                   "radius": 0,
                   "background": "#fcfcf900",
-                  "lone": true,
+                  "lone": false,
                   "header": {
                     "content": {
                       "mod": "ink-pane"
                     },
                     "height": 30,
                     "position": "top",
-                    "reveal": "always"
+                    "reveal": "hover"
                   }
                 }
               }
@@ -173,18 +173,8 @@
             }
           ],
           "background": {
-            "image": "mods/ink-chrome/art/landscape-v11.png",
+            "image": "mods/ink-chrome/art/landscape-v18.png",
             "fit": "cover"
-          }
-        },
-        {
-          "id": "status",
-          "type": "block",
-          "size": {
-            "px": 28
-          },
-          "content": {
-            "mod": "ink-status"
           }
         }
       ]

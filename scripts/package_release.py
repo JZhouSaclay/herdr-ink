@@ -6,10 +6,14 @@ files=[ROOT/n for n in ('README.md','RECIPE.md','ART-NOTICE.md','preview-v7.png'
 files += [ROOT/n for n in ('sidebar-after-v15.png','sidebar-detail-v15.png','sidebar-native-review-v15.json','space-objects-v15.png')]
 files += [ROOT/n for n in ('sidebar-after-v16.png','sidebar-detail-v16.png','sidebar-native-review-v16.json','space-objects-v16.png')]
 files += [ROOT/n for n in ('selection-after-v17.png','selection-sidebar-v17.png','selection-tabs-v17.png','selection-native-review-v17.json')]
+files += [ROOT/n for n in ('CHECKPOINTS.md','V18-REVIEW.md','DESIGN-V18.md','checkpoint-manifest.json','checkpoint-v18.json','native-review-v18.json','restore-proof-v18.json','footer-icons-v18.png','ink-study-v18-native.png','ink-study-v18-footer.png','ink-study-v18-corner.png')]
+files += [p for p in (ROOT/'integrations').rglob('*') if p.is_file()]
 files+=list((ROOT/'layouts').glob('*'))+list((ROOT/'themes').glob('*'))
-for pattern in ('*.py','*.mjs','*.js'):files+=list((ROOT/'scripts').glob(pattern))
+for pattern in ('*.py','*.mjs','*.js','*.json'):files+=list((ROOT/'scripts').glob(pattern))
 files+=[ROOT/'reference'/n for n in ('ink-reference.png','bamboo-table.jpg','crane-ink-reference.png','Zhi-Mang-Xing-brand.ttf','zhimangxing-OFL.txt')]
-assets=set((ROOT/'mods/ink-chrome/art').glob('bamboo-v9-*.png'))
+# Include all runtime artwork: the v17 restoration manifest and image generators
+# also need source assets which are no longer referenced by the active layout.
+assets=set(p for p in (ROOT/'mods/ink-chrome/art').iterdir() if p.is_file())
 for folder in (ROOT/'mods').iterdir():
     files+=[folder/'mod.json']+list(folder.glob('*.js'))+list((folder/'fonts').glob('*'))
     for source in folder.glob('*.js'):
@@ -28,10 +32,14 @@ with zipfile.ZipFile(ROOT/'ink-study.zip','w',zipfile.ZIP_DEFLATED) as z:
 with zipfile.ZipFile(ROOT/'ink-study.zip') as z:
     assert z.testzip() is None
     names=z.namelist()
-    assert len([n for n in names if n.endswith('/main.js')])==6
+    assert len([n for n in names if n.startswith('mods/') and n.endswith('/main.js')])==6
     assert not any(n.startswith(('.review-home','data/','backups/')) or n.endswith('.d.ts') for n in names)
     assert all(f'mods/ink-chrome/art/ink-number-v11-{i}.png' in names for i in range(1,16))
     assert 'mods/ink-chrome/art/landscape-v11.png' in names
+    assert 'mods/ink-chrome/art/landscape-v18.png' in names
+    assert 'checkpoint-v18.json' in names
+    assert 'integrations/pretty-tui-v18/ink-footer.ts' in names
+    assert 'integrations/pretty-tui-v17/index.ts' in names
     assert 'mods/ink-chrome/fonts/LXGWWenKaiMono-Regular.ttf' in names
     assert 'mods/ink-chrome/fonts/OFL.txt' in names
     assert 'mods/ink-chrome/fonts/HedeInkMono-Regular.ttf' in names

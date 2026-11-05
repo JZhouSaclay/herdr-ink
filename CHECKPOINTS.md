@@ -62,3 +62,7 @@ git clone /Users/jiezhou/herdr-ink-study/.checkpoints/ink-study-v17.bundle /User
 ```
 
 历史截图、源码、生成脚本和必要字体随 Git 存档保存；运行时缓存、测试窗口、本机终端记录与凭据不纳入此存档。
+
+## v18 待验收版本
+
+后续 UI 优化另存为 `ink-study-v18-preview`，原 `ink-study-v17` 不移动。本次涉及 pretty-tui 扩展，完整回退请使用新恢复包中同时包含两部分的脚本；详见 `/Users/jiezhou/herdr-ink-study/V18-REVIEW.md`。

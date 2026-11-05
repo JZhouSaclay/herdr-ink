@@ -1,7 +1,7 @@
 import { inkLine, inkStamp } from "./ink.js";
 import { View, div, image, svg } from "gpui-kit";
 import { h_flex, v_flex } from "gpui-base";
-import { theme, run, props, window, shared, setShared, updates, layout } from "herdr";
+import { theme, run, props, window, shared, setShared, updates, layout, spaces, agents } from "herdr";
 
 function find(node, id) {
   if (node?.id === id) return node;
@@ -35,14 +35,20 @@ export default class WorkspaceChrome extends View {
     const collapsed = narrow();
     if (props()?.separator) return div().relative().size_full().child(inkLine(props().separator === "vertical" ? "left" : "top"));
     if (props()?.footer) {
+      const space = spaces().find(s => s.active);
+      const blocked = agents().filter(a => a.status === "blocked").length;
       const row = (id, icon, label, dim, action) => h_flex().id(id).h(28).px(8).gap(9).items_center().rounded(0)
         .text_color(dim ? t.dim : t.muted).hover(s => s.bg(t.hover).text_color(t.foreground)).cursor_pointer()
         .on_click(action).child(svg(`mods/workspace-chrome/${icon}.svg`).size(14))
-        .when(!collapsed, el => el.child(label));
+        .when(!collapsed, el => el.child(div().flex_1().truncate().child(label)));
       return v_flex().size_full().bg(t.chrome).relative().child(inkLine("top")).px(8).pt(4).pb(8).text_size(13)
         .child(row("settings", "settings", "设置", false, () => run("app.settings"))
-          .when(Boolean(updates().app.ready), el => el.child(div().size(6).rounded_full().bg(t.accent))))
-        .child(row("machine", "plus", "添加机器", true, () => run("mod.open", { name: "machine-add" })));
+          .when(Boolean(updates().app.ready), el => el.child(div().size(6).rounded_full().bg(t.accent)))
+          .when(!collapsed, el => el.child(div().flex_1()))
+          .when(!collapsed && blocked > 0, el => el.child(div().text_size(11).text_color(t.blocked).tooltip(`${blocked} 个 Agent 等待确认`).child(`待 ${blocked}`))))
+        .child(row("machine", "plus", space?.machine ? `远程 · ${space.machine}` : "添加机器", true,
+          () => run("mod.open", { name: "machine-add" }))
+          .tooltip(space?.machine ? `当前远程主机：${space.machine}` : "连接另一台机器"));
     }
     return h_flex().size_full().bg(t.chrome).pl(collapsed ? 6 : 14).pr(10).gap(4).items_center().text_size(13.5)
       .when(window()?.platform === "macos" && !window()?.fullscreen && !collapsed, el => el.pl(76))

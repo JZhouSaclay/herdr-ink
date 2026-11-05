@@ -24,7 +24,10 @@ assert layout['terminal_opacity']==.24
 # The art lives on the shared container, never on each individual pane.
 work=next(n for n in layout['children'] if n['id']=='work')
 body=next(n for n in work['children'] if n['id']=='work-body')
-assert body['background']['image'].endswith('landscape-v11.png')
+assert body['background']['image'].endswith('landscape-v18.png')
+assert all(n['id'] != 'status' for n in work['children'])
+assert body['children'][0]['content']['pane']['lone'] is False
+assert body['children'][0]['content']['pane']['header']['reveal'] == 'hover'
 assert body['children'][0]['content']['pane']['background'].endswith('00')
 colors=json.loads((ROOT/'themes/ink-study.json').read_text())['colors']
 for role in ['foreground','muted','dim','working','blocked','done']:
