@@ -1,0 +1,11 @@
+{
+  "ui_font": "LXGW WenKai Mono",
+  "terminal_font": "Hede Ink Mono",
+  "spacing_ratio": 1.016,
+  "brand_image": "mods/ink-chrome/art/hede-calligraphy-v13.png",
+  "native_columns_aligned": true,
+  "native_screenshot": "hede-native-preview-v13.png",
+  "temporary_tab_closed": "tb547ea548e4a57aec4f34aecd801fcf3a",
+  "original_tab_restored": true,
+  "errors": []
+}

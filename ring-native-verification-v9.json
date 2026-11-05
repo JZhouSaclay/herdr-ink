@@ -1,0 +1,9 @@
+{
+  "source": "actual installed Herdr window",
+  "frames": 12,
+  "distinct_ring_crops": 12,
+  "seconds": 3.381931875,
+  "spin_ms": 1600,
+  "native_svg": true,
+  "per_frame_js_timer": false
+}

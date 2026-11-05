@@ -1,0 +1,19 @@
+{
+  "key_poses": [
+    "01",
+    "02",
+    "03",
+    "04",
+    "05",
+    "06"
+  ],
+  "key_pose_interval_ms": 400,
+  "flight_ms": 2000,
+  "position_ms": 1600,
+  "fade_ms": 400,
+  "gif_native_frames": 51,
+  "gif_final_hold_ms": 1000,
+  "final_pose_matches_original_06": true,
+  "includes_landing": false,
+  "finite_playback": true
+}

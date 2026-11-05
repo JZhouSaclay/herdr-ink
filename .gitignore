@@ -1,0 +1,15 @@
+/.checkpoints/
+/backups/
+/.review-home/
+/.font-v12-parts/
+/.native-motion/
+/.native-ring-v9/
+/.pi-ink-review/
+/.review-pid
+/ink-study.zip
+/commands-local.json
+**/__pycache__/
+*.pyc
+.DS_Store
+mods/**/*.d.ts
+mods/**/jsconfig.json

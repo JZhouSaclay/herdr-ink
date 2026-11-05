@@ -1,0 +1,40 @@
+"""Package the layout from source without launching/stopping Herdr or changing homes."""
+from pathlib import Path
+import re,json,zipfile
+ROOT=Path(__file__).resolve().parents[1]
+files=[ROOT/n for n in ('README.md','RECIPE.md','ART-NOTICE.md','preview-v7.png','verification.txt','native-review.json','ink-ring-preview.gif','crane-arrival-preview-v8.gif','crane-poses-v8.png','crane-art-verification-v8.json','ring-native-proof-v9.gif','ring-native-verification-v9.json','ink-numbers-v11.png','pi-ink-native-v11.png','ink-style-native-verification-v11.json','font-source-v12.json','font-native-review-v12.json','font-native-preview-v12.png','font-spacing-v13.json','hede-native-review-v13.json','hede-native-preview-v13.png','hede-calligraphy-preview-v13.png','ink-bubble-native-v14.png','ink-bubble-native-review-v14.json')]
+files += [ROOT/n for n in ('sidebar-after-v15.png','sidebar-detail-v15.png','sidebar-native-review-v15.json','space-objects-v15.png')]
+files += [ROOT/n for n in ('sidebar-after-v16.png','sidebar-detail-v16.png','sidebar-native-review-v16.json','space-objects-v16.png')]
+files += [ROOT/n for n in ('selection-after-v17.png','selection-sidebar-v17.png','selection-tabs-v17.png','selection-native-review-v17.json')]
+files+=list((ROOT/'layouts').glob('*'))+list((ROOT/'themes').glob('*'))
+for pattern in ('*.py','*.mjs','*.js'):files+=list((ROOT/'scripts').glob(pattern))
+files+=[ROOT/'reference'/n for n in ('ink-reference.png','bamboo-table.jpg','crane-ink-reference.png','Zhi-Mang-Xing-brand.ttf','zhimangxing-OFL.txt')]
+assets=set((ROOT/'mods/ink-chrome/art').glob('bamboo-v9-*.png'))
+for folder in (ROOT/'mods').iterdir():
+    files+=[folder/'mod.json']+list(folder.glob('*.js'))+list((folder/'fonts').glob('*'))
+    for source in folder.glob('*.js'):
+        for name in re.findall(r'mods/ink-chrome/art/([A-Za-z0-9._-]+)',source.read_text()):
+            if name.endswith('-'):assets.update((ROOT/'mods/ink-chrome/art').glob(name+'*.png'))
+            else:assets.add(ROOT/'mods/ink-chrome/art'/name)
+def visit(n):
+    bg=n.get('background')
+    if isinstance(bg,dict) and 'image' in bg:assets.add(ROOT/bg['image'])
+    for child in n.get('children',[]):visit(child)
+visit(json.loads((ROOT/'layouts/ink-study.json').read_text()))
+files+=sorted(assets)
+assert all(p.is_file() for p in files)
+with zipfile.ZipFile(ROOT/'ink-study.zip','w',zipfile.ZIP_DEFLATED) as z:
+    for p in sorted(set(files)):z.write(p,p.relative_to(ROOT))
+with zipfile.ZipFile(ROOT/'ink-study.zip') as z:
+    assert z.testzip() is None
+    names=z.namelist()
+    assert len([n for n in names if n.endswith('/main.js')])==6
+    assert not any(n.startswith(('.review-home','data/','backups/')) or n.endswith('.d.ts') for n in names)
+    assert all(f'mods/ink-chrome/art/ink-number-v11-{i}.png' in names for i in range(1,16))
+    assert 'mods/ink-chrome/art/landscape-v11.png' in names
+    assert 'mods/ink-chrome/fonts/LXGWWenKaiMono-Regular.ttf' in names
+    assert 'mods/ink-chrome/fonts/OFL.txt' in names
+    assert 'mods/ink-chrome/fonts/HedeInkMono-Regular.ttf' in names
+    assert 'mods/ink-chrome/art/hede-calligraphy-v13.png' in names
+    assert len([n for n in names if n.startswith('mods/ink-chrome/art/object-v16-') and n.endswith('.png')]) == 15
+    print(f'Packaged {len(names)} files: {ROOT/"ink-study.zip"}')

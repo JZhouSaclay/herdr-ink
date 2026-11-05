@@ -1,0 +1,19 @@
+{
+  "project": "LXGW WenKai",
+  "release": "v1.530",
+  "family": "LXGW WenKai Mono",
+  "source": "https://github.com/lxgw/LxgwWenKai/releases/tag/v1.530",
+  "file_source": "https://raw.githubusercontent.com/lxgw/LxgwWenKai/v1.530/fonts/TTF/LXGWWenKaiMono-Regular.ttf",
+  "license": "SIL Open Font License 1.1",
+  "sha256": "895ce1d2fa00d5ca3bec0329d38e3190454f4b5fa7b4733f491c419faf9753a1",
+  "isFixedPitch": true,
+  "advance_widths": {
+    "i": 500,
+    "M": 500,
+    "0": 500,
+    " ": 500,
+    "宋": 1000,
+    "体": 1000,
+    "楷": 1000
+  }
+}

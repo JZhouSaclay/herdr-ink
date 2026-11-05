@@ -1,0 +1,27 @@
+PASS source / ink-agents
+PASS source / ink-chrome
+PASS source / ink-pane
+PASS source / ink-spaces
+PASS source / ink-status
+PASS source / ink-tabs
+PASS fixture / ink-tabs / populated
+PASS fixture / ink-tabs / empty
+PASS fixture / ink-spaces / populated
+PASS fixture / ink-spaces / narrow
+PASS fixture / ink-agents / populated
+PASS fixture / ink-agents / subagents
+PASS fixture / ink-agents / empty
+PASS fixture / ink-agents / narrow
+PASS fixture / ink-agents / sort
+PASS fixture / ink-pane / populated
+PASS fixture / ink-pane / hover
+PASS fixture / ink-chrome / footer
+PASS fixture / ink-chrome / narrow
+PASS layout / unique IDs, shared art container, transparent pane frames
+PASS contrast / all six UI text roles >= 4.5:1 on sidebar paper
+PASS real render events / ink-spaces / selection-based ink shape, slightly deeper ink, hover frame, exit, selected frame
+PASS real render events / ink-agents / selection-based ink shape, slightly deeper ink, hover frame, exit, selected frame
+PASS real render events / ink-tabs / taller proportioned bamboo, hover, safe close; idle ink seal
+PASS crane sequence / ink-spaces / left-facing GIF, 2000ms stop at flight pose 06, reselection, stale cancellation, text clearance
+PASS crane sequence / ink-agents / left-facing GIF, 2000ms stop at flight pose 06, reselection, stale cancellation, text clearance
+PASS sidebar objects / stable across rename, reorder and grouping; fixed width; Pi prefix and age removed; real session metadata; narrow rail

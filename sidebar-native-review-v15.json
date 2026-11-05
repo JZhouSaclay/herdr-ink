@@ -1,0 +1,17 @@
+{
+  "layout": "ink-study",
+  "native_errors": [],
+  "screenshot": "/Users/jiezhou/herdr-ink-study/sidebar-after-v15.png",
+  "objects": 15,
+  "object_size": 24,
+  "compact_object_size": 20,
+  "verified": [
+    "live workspace and agent matching objects",
+    "no duration or program prefix in live agent cards",
+    "session metadata priority",
+    "stable object across rename/reorder/grouping",
+    "narrow sidebar",
+    "existing pin/focus/crane handlers preserved"
+  ],
+  "checks": "/Users/jiezhou/herdr-ink-study/verification.txt"
+}

@@ -1,0 +1,1 @@
+Hede Ink Mono is derived from LXGW WenKai Mono v1.530. All horizontal advances are scaled by 1.016; glyph outlines remain unchanged. The modified font uses a new family name to respect Reserved Font Names. Copyright and SIL OFL license remain in OFL.txt.
