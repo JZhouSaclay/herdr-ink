@@ -1,0 +1,12 @@
+{
+  "tag": "ink-study-v18-cursor",
+  "cursor": "steady bar",
+  "color": "#58695b",
+  "uses_native_cursor": true,
+  "text_and_cursor_markers_preserved": true,
+  "native_typed_cursor_verified": true,
+  "typed_preview": "cursor-bar-typed-detail.png",
+  "checks_passed": 13,
+  "current_session_reload_required": true,
+  "nested_cursor_save_fixed": true
+}

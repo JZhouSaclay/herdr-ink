@@ -1,3 +1,5 @@
+光标候选版 `ink-study-v18-cursor` 增加原生墨绿细竖线，说明见 `/Users/jiezhou/herdr-ink-study/CURSOR-REVIEW.md`。
+
 当前候选版为 **v18**：移除两行常驻信息、补齐水墨 footer 图标与左上淡竹。原 `ink-study-v17` 稳定标签保留。完整安装、已有会话重载与跨版本恢复见 `/Users/jiezhou/herdr-ink-study/V18-REVIEW.md`。
 
 # 水墨书斋 · Ink Study
