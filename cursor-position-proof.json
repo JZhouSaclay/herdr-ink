@@ -1,0 +1,147 @@
+{
+  "frames": [
+    {
+      "actual": [
+        38,
+        16
+      ],
+      "expected": [
+        38,
+        16
+      ],
+      "matches": true,
+      "cursor_after_images": true,
+      "hardware": true
+    },
+    {
+      "actual": [
+        38,
+        16
+      ],
+      "expected": [
+        38,
+        16
+      ],
+      "matches": true,
+      "cursor_after_images": true,
+      "hardware": true
+    },
+    {
+      "actual": [
+        38,
+        16
+      ],
+      "expected": [
+        38,
+        16
+      ],
+      "matches": true,
+      "cursor_after_images": true,
+      "hardware": true
+    },
+    {
+      "actual": [
+        38,
+        17
+      ],
+      "expected": [
+        38,
+        17
+      ],
+      "matches": true,
+      "cursor_after_images": true,
+      "hardware": true
+    },
+    {
+      "actual": [
+        38,
+        18
+      ],
+      "expected": [
+        38,
+        18
+      ],
+      "matches": true,
+      "cursor_after_images": true,
+      "hardware": true
+    },
+    {
+      "actual": [
+        38,
+        19
+      ],
+      "expected": [
+        38,
+        19
+      ],
+      "matches": true,
+      "cursor_after_images": true,
+      "hardware": true
+    },
+    {
+      "actual": [
+        38,
+        18
+      ],
+      "expected": [
+        38,
+        18
+      ],
+      "matches": true,
+      "cursor_after_images": true,
+      "hardware": true
+    },
+    {
+      "actual": [
+        38,
+        17
+      ],
+      "expected": [
+        38,
+        17
+      ],
+      "matches": true,
+      "cursor_after_images": true,
+      "hardware": true
+    },
+    {
+      "actual": [
+        38,
+        16
+      ],
+      "expected": [
+        38,
+        16
+      ],
+      "matches": true,
+      "cursor_after_images": true,
+      "hardware": true
+    },
+    {
+      "actual": [
+        38,
+        17
+      ],
+      "expected": [
+        38,
+        17
+      ],
+      "matches": true,
+      "cursor_after_images": true,
+      "hardware": true
+    },
+    {
+      "actual": [
+        118,
+        27
+      ],
+      "expected": [
+        118,
+        27
+      ],
+      "matches": true,
+      "cursor_after_images": true,
+      "hardware": true
+    }
+  ]
+}

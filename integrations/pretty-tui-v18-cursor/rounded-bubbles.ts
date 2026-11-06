@@ -8,6 +8,19 @@ const ESC = "\x1b";
 const MARKER = /\x1b\]1337;PrettyBubble=(\d+),(\d+),(\d+),(\d+),(\d+)(?:,(\d+))?\x07/g;
 const PATCH = Symbol.for("pretty-tui.rounded-bubble-images");
 const END_SYNC = `${ESC}[?2026l`;
+
+/** Draw images before Pi's final cursor positioning/visibility, inside the frame. */
+export function insertFrameImages(data: string, images: string): string {
+  if (!images) return data;
+  // Image placements use absolute cursor moves. DEC save/restore alone is not
+  // sufficient: a terminal or another image layer can overwrite the saved slot.
+  // Keep Pi's authoritative text/IME cursor command last, even on unchanged rows.
+  const cursorTail = /(?:\x1b\[\d+;\d+H)?\x1b\[\?25[hl]\x1b\[\?2026l$/.exec(data);
+  if (cursorTail) return data.slice(0, cursorTail.index) + images + cursorTail[0];
+  return data.endsWith(END_SYNC)
+    ? data.slice(0, -END_SYNC.length) + images + END_SYNC
+    : data + images;
+}
 let nextBubble = 1;
 export const bubbleKey = () => nextBubble++;
 export const stripBubbleMarkers = (value: string) => stripFooterMarkers(value.replace(MARKER, ""));
@@ -196,8 +209,7 @@ export function installRoundedBubbles(prototype: any, onError: (error: unknown) 
       const cell = getCellDimensions();
       const images = painter.paint(this.previousScreen ?? [], terminal.columns, cell,
         /\x1b_G[^;]*a=d[^;]*d=A(?:,|;)/.test(data), hidden);
-      if (data.endsWith(END_SYNC)) data = data.slice(0, -END_SYNC.length) + images + END_SYNC;
-      else data += images;
+      data = insertFrameImages(data, images);
     } catch (error) {
       failed = true;
       data += painter.dispose();

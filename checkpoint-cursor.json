@@ -1,5 +1,5 @@
 {
-  "tag": "ink-study-v18-cursor-fix1",
+  "tag": "ink-study-v18-cursor-fix2",
   "baseline_tag": "ink-study-v17",
   "created_at": "2026-11-05T17:07:33.824503+00:00",
   "versions": {
@@ -2353,7 +2353,7 @@
         },
         "rounded-bubbles.ts": {
           "source": "integrations/pretty-tui-v18-cursor/rounded-bubbles.ts",
-          "sha256": "a3a6491dcc3e4cfa8bd013dc528a3e9a078f5bcf29bdb877d90c56ac5da92c7b"
+          "sha256": "e39e553cb2cde6f38a8bae1fa0ededa857af2ed775f1e72ae77651e35349df4e"
         },
         "transcript-margins.ts": {
           "source": "integrations/pretty-tui-v18-cursor/transcript-margins.ts",
