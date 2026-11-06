@@ -1,0 +1,176 @@
+{
+  "tag": "ink-cursor-particles-v1",
+  "default_version": "ink-cursor-particles-v1",
+  "scope": "pretty-tui only; preserve current Herdr layout",
+  "versions": {
+    "ink-cursor-particles-v1": {
+      "runtime": {},
+      "extension": {
+        "LICENSE": {
+          "source": "integrations/pretty-tui-cursor-particles/LICENSE",
+          "sha256": "def3cec654b166cf64f7e963764a65ebe2c2e865a6b6c6dad24e303b2d67d7d9"
+        },
+        "README.md": {
+          "source": "integrations/pretty-tui-cursor-particles/README.md",
+          "sha256": "9af24fe241595a7e2522d8d321a439042e147c2d328b777be14a18c650ef6f18"
+        },
+        "activity-timeline.ts": {
+          "source": "integrations/pretty-tui-cursor-particles/activity-timeline.ts",
+          "sha256": "3c95214cc0ddd191aeaa091b5adfcaf7e17b42f3bd252d6cdd23daedcc7c6715"
+        },
+        "art/cursor-ink.png": {
+          "source": "integrations/pretty-tui-cursor-particles/art/cursor-ink.png",
+          "sha256": "2a32aed509c99249c9ac13c5ba5e74446299e45837bcad5bfb329300dd7e8124"
+        },
+        "art/cursor-leaf-00.png": {
+          "source": "integrations/pretty-tui-cursor-particles/art/cursor-leaf-00.png",
+          "sha256": "5bf82b298e0c0bbc6f6313e65499a59bdee6260144d12661474c63588cdde31f"
+        },
+        "art/cursor-leaf-01.png": {
+          "source": "integrations/pretty-tui-cursor-particles/art/cursor-leaf-01.png",
+          "sha256": "73a3ff38336e0336b496cb433cc9677ad4f9729c2662285b4226e99b19350d5a"
+        },
+        "art/cursor-leaf-02.png": {
+          "source": "integrations/pretty-tui-cursor-particles/art/cursor-leaf-02.png",
+          "sha256": "c5fb695827505f0a6bdfa24b670782f94f0b0dbc6b47ecfe4e498f615091b2a0"
+        },
+        "art/cursor-leaf-03.png": {
+          "source": "integrations/pretty-tui-cursor-particles/art/cursor-leaf-03.png",
+          "sha256": "8875cad4ea3c5c76ce6ca0c56449c3a4aef58bf94eca561969468f9dfef1fe39"
+        },
+        "art/cursor-leaf-04.png": {
+          "source": "integrations/pretty-tui-cursor-particles/art/cursor-leaf-04.png",
+          "sha256": "63b667ad81e2679751221eedea5b3e42bd2985b0fe6dc60f5b9bc9dc14bb970b"
+        },
+        "art/cursor-leaf-05.png": {
+          "source": "integrations/pretty-tui-cursor-particles/art/cursor-leaf-05.png",
+          "sha256": "37f8084d45850a1ead28562c22cc4b7e9b93651b011571d052a4e8ad8acbe164"
+        },
+        "art/cursor-leaf-06.png": {
+          "source": "integrations/pretty-tui-cursor-particles/art/cursor-leaf-06.png",
+          "sha256": "85e099e6459d7e860e83e851acefbc809ba069590ccc05c3f2dc2e5e7141269a"
+        },
+        "art/cursor-leaf-07.png": {
+          "source": "integrations/pretty-tui-cursor-particles/art/cursor-leaf-07.png",
+          "sha256": "937294c869fc38a74902e966890094a001d380e7ccb18912eabe339da514cf91"
+        },
+        "art/cursor-leaf-08.png": {
+          "source": "integrations/pretty-tui-cursor-particles/art/cursor-leaf-08.png",
+          "sha256": "c8f607e3a7409c4283d592eb3a7f41ac90f42338d555168fadcc6006d0891522"
+        },
+        "art/cursor-leaf-09.png": {
+          "source": "integrations/pretty-tui-cursor-particles/art/cursor-leaf-09.png",
+          "sha256": "dccc0e3ea3e1afa9db968cd40c0e5132add212860cad7cddfd47ee8094eb328d"
+        },
+        "art/cursor-leaf-10.png": {
+          "source": "integrations/pretty-tui-cursor-particles/art/cursor-leaf-10.png",
+          "sha256": "2dee76b4b9e785f1d51629198db40c8c422165b05d7dacf656d28c930694ced9"
+        },
+        "art/cursor-leaf-11.png": {
+          "source": "integrations/pretty-tui-cursor-particles/art/cursor-leaf-11.png",
+          "sha256": "164532f98e366750cb465ea169fe8fbb68f8c01744d48503a06cc4810439a9c8"
+        },
+        "art/cursor-leaf-12.png": {
+          "source": "integrations/pretty-tui-cursor-particles/art/cursor-leaf-12.png",
+          "sha256": "bd185b3cc17d0f742fa7da0b2ec51c2a45acb5198da0a7022ebecda8306e4ae0"
+        },
+        "art/cursor-leaf-13.png": {
+          "source": "integrations/pretty-tui-cursor-particles/art/cursor-leaf-13.png",
+          "sha256": "34438117eefb076b5477d1e68f049f280ba508a0abfb30bd98c3ef22da7396da"
+        },
+        "art/cursor-leaf-14.png": {
+          "source": "integrations/pretty-tui-cursor-particles/art/cursor-leaf-14.png",
+          "sha256": "813dff0593a573054ccfd2f7a1ca22bedfdd6555a308cafd58bed4866d77e708"
+        },
+        "art/cursor-leaf-15.png": {
+          "source": "integrations/pretty-tui-cursor-particles/art/cursor-leaf-15.png",
+          "sha256": "62ac78195f116863c1e78d4ce03362f4a20880282209447663922a77f303d036"
+        },
+        "art/cursor-leaf-16.png": {
+          "source": "integrations/pretty-tui-cursor-particles/art/cursor-leaf-16.png",
+          "sha256": "a06f8ac387a5cb7f474a5d6cc7e67899435bafa50252ebff733bc3ad1eaf8865"
+        },
+        "art/cursor-leaf-17.png": {
+          "source": "integrations/pretty-tui-cursor-particles/art/cursor-leaf-17.png",
+          "sha256": "2849395efc090c5686709a5abbf30a69ce78ccf30985a317bbcd610f4c20c8df"
+        },
+        "art/cursor-leaf-18.png": {
+          "source": "integrations/pretty-tui-cursor-particles/art/cursor-leaf-18.png",
+          "sha256": "aba3a116d1cfecde0022510999908c3106e8ef05a1b03a483613252cb3eec2e6"
+        },
+        "art/cursor-leaf-19.png": {
+          "source": "integrations/pretty-tui-cursor-particles/art/cursor-leaf-19.png",
+          "sha256": "475e38aea29f75a3beda46e0b307ff9f98d329d530c43247586c8cae50a0aba0"
+        },
+        "art/cursor-leaf-20.png": {
+          "source": "integrations/pretty-tui-cursor-particles/art/cursor-leaf-20.png",
+          "sha256": "dfd8a47b9dc5ed4ce0772498a57361326f9cf070c2b3936eaf8f18023b3621fb"
+        },
+        "art/cursor-leaf-21.png": {
+          "source": "integrations/pretty-tui-cursor-particles/art/cursor-leaf-21.png",
+          "sha256": "2a35e3db13ab20ec696e490755c4ce17aff1226a0882708337673414c1543b82"
+        },
+        "art/cursor-leaf-22.png": {
+          "source": "integrations/pretty-tui-cursor-particles/art/cursor-leaf-22.png",
+          "sha256": "8846ba58009777ba2b6f61ce5da8bebda83732955a15f2570444e76ac00bf9b8"
+        },
+        "art/cursor-leaf-23.png": {
+          "source": "integrations/pretty-tui-cursor-particles/art/cursor-leaf-23.png",
+          "sha256": "b298ab22e45cbf5c72440ecb2309e327d7883b8c25bc416d0632f1bab32567c6"
+        },
+        "art/footer-model-v18.png": {
+          "source": "integrations/pretty-tui-cursor-particles/art/footer-model-v18.png",
+          "sha256": "bd3eda49cabbb76382bb5d8f62768b1d775e240ed8f8b6696a10459c48337fd9"
+        },
+        "art/footer-scroll-v18.png": {
+          "source": "integrations/pretty-tui-cursor-particles/art/footer-scroll-v18.png",
+          "sha256": "9c7aa7bc3c0c87c9133ec3bcd7fb1c616c812be079257e3349845b2ffac47c44"
+        },
+        "art/footer-wind-v18.png": {
+          "source": "integrations/pretty-tui-cursor-particles/art/footer-wind-v18.png",
+          "sha256": "bcba036a54ef9d589ff40fe008c6a83ea2d9405a3b28b79ecb71ce05c29734ac"
+        },
+        "index.ts": {
+          "source": "integrations/pretty-tui-cursor-particles/index.ts",
+          "sha256": "9a0e80762bcaa0941627f7bd8dffd7b07348b5d3e752ab25c01599bde82a18c2"
+        },
+        "ink-cursor-images.ts": {
+          "source": "integrations/pretty-tui-cursor-particles/ink-cursor-images.ts",
+          "sha256": "5dc7bd761f4bb97bbffff6ac3a52c51a135bf5c883d530b8d62e31000b92e24d"
+        },
+        "ink-cursor.ts": {
+          "source": "integrations/pretty-tui-cursor-particles/ink-cursor.ts",
+          "sha256": "80d788dcd276551f75a42557940cfd23b820f19a878990007cfb7e29f0e4008d"
+        },
+        "ink-footer.ts": {
+          "source": "integrations/pretty-tui-cursor-particles/ink-footer.ts",
+          "sha256": "0e10b7fc48306aad9704f475358b3ffab076dd06ebac0f2786524d22614af7e1"
+        },
+        "ink-frame.ts": {
+          "source": "integrations/pretty-tui-cursor-particles/ink-frame.ts",
+          "sha256": "118375b84a05c76de7f00d6cc7d1c7e2711f1dfce9750857b45a9ff1001d581f"
+        },
+        "nested-tools.ts": {
+          "source": "integrations/pretty-tui-cursor-particles/nested-tools.ts",
+          "sha256": "8a09ae7e3497ec56a963a284e50a6819b0bca6d2ecf8a2b45bd6b6992dd83ea9"
+        },
+        "package.json": {
+          "source": "integrations/pretty-tui-cursor-particles/package.json",
+          "sha256": "620f22c93e01f60dd2dcd1f3fd528d994adcef9262a1f9e57d325b5ae8dec70d"
+        },
+        "rounded-bubbles.ts": {
+          "source": "integrations/pretty-tui-cursor-particles/rounded-bubbles.ts",
+          "sha256": "77c30ec216b94964b16892ff287e4e5211723efe88d2c03edc9104a070855d09"
+        },
+        "transcript-margins.ts": {
+          "source": "integrations/pretty-tui-cursor-particles/transcript-margins.ts",
+          "sha256": "60cbff649d8e2344b0ecfa13944a8edc1ce22cd2be29079e45f41e0ec558b2b6"
+        },
+        "user-bubble-background.ts": {
+          "source": "integrations/pretty-tui-cursor-particles/user-bubble-background.ts",
+          "sha256": "38562d3ad9db09c1487027af51d51620a3fb69ee4fea2f7aa124ba4c9c2bf006"
+        }
+      }
+    }
+  }
+}

@@ -9,14 +9,14 @@ import argparse, datetime, hashlib, json, shutil, tempfile, zipfile
 def main():
     parser=argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--archive',type=Path,required=True)
-    parser.add_argument('--version',choices=['ink-study-v18','ink-study-v17','ink-study-v18-cursor'])
+    parser.add_argument('--version',choices=['ink-study-v18','ink-study-v17','ink-study-v18-cursor','ink-cursor-particles-v1'])
     parser.add_argument('--home',type=Path,default=Path.home()/'.config/herdr-app')
     parser.add_argument('--extension-dir',type=Path,default=Path.home()/'.pi/agent/extensions/pretty-tui')
     parser.add_argument('--apply',action='store_true')
     args=parser.parse_args();home=args.home.expanduser().resolve();extension=args.extension_dir.expanduser().resolve()
     with zipfile.ZipFile(args.archive) as archive,tempfile.TemporaryDirectory(prefix='ink-restore-') as tmp:
         if archive.testzip() is not None:raise SystemExit('Archive CRC check failed')
-        metadata='checkpoint-cursor.json' if 'checkpoint-cursor.json' in archive.namelist() else 'checkpoint-v18.json'
+        metadata=next(name for name in ['checkpoint-cursor-particles.json','checkpoint-cursor.json','checkpoint-v18.json'] if name in archive.namelist())
         manifest=json.loads(archive.read(metadata))
         args.version=args.version or manifest.get('default_version','ink-study-v18')
         version=manifest['versions'][args.version]

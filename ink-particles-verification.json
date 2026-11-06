@@ -1,0 +1,16 @@
+{
+  "tag": "ink-cursor-particles-v1",
+  "leaf_count": 7,
+  "frames": 24,
+  "frame_ms": 100,
+  "loop": true,
+  "width_cells": 1,
+  "coverage_min": 0.02734375,
+  "coverage_max": 0.033203125,
+  "checks_passed": 18,
+  "native_trace_frames": 100,
+  "positions_match_after_reload": true,
+  "native_window_screenshot_verified": false,
+  "preview_is_design_illustration": true,
+  "prior_review_draft_preserved": true
+}
