@@ -9,7 +9,7 @@ import argparse, datetime, hashlib, json, shutil, tempfile, zipfile
 def main():
     parser=argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--archive',type=Path,required=True)
-    parser.add_argument('--version',choices=['ink-study-v18','ink-study-v17','ink-study-v18-cursor','ink-cursor-particles-v1'])
+    parser.add_argument('--version',choices=['ink-study-v18','ink-study-v17','ink-study-v18-cursor','ink-cursor-particles-v1','ink-cursor-particles-v2'])
     parser.add_argument('--home',type=Path,default=Path.home()/'.config/herdr-app')
     parser.add_argument('--extension-dir',type=Path,default=Path.home()/'.pi/agent/extensions/pretty-tui')
     parser.add_argument('--apply',action='store_true')

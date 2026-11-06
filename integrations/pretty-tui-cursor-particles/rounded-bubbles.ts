@@ -193,7 +193,7 @@ export function installRoundedBubbles(prototype: any, onError: (error: unknown) 
         const images = painter.cursor.tick();
         const position = painter.cursor.position;
         if (position) {
-          // Only update the single cursor cell; never rerender the transcript.
+          // Only update the cursor overlay; never rerender the transcript.
           const tail = `\x1b[${position.row};${position.col}H\x1b[?25l${END_SYNC}`;
           screen.terminal.write(insertFrameImages(`\x1b[?2026h${tail}`, images));
         }
@@ -238,7 +238,7 @@ export function installRoundedBubbles(prototype: any, onError: (error: unknown) 
       const cell = getCellDimensions();
       const reset = /\x1b_G[^;]*a=d[^;]*d=A(?:,|;)/.test(data);
       const images = painter.paint(this.previousScreen ?? [], terminal.columns, cell, reset, hidden);
-      const cursorImages = painter.cursor.paint(hidden ? undefined : nativeFrameCursor(data), getCursorStyle(), reset);
+      const cursorImages = painter.cursor.paint(hidden ? undefined : nativeFrameCursor(data), getCursorStyle(), reset, terminal.columns);
       data = insertFrameImages(data, images + cursorImages, painter.cursor.visible);
       animate(this, painter);
     } catch (error) {

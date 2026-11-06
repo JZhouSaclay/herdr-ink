@@ -1,9 +1,9 @@
 {
-  "tag": "ink-cursor-particles-v1",
-  "default_version": "ink-cursor-particles-v1",
+  "tag": "ink-cursor-particles-v2",
+  "default_version": "ink-cursor-particles-v2",
   "scope": "pretty-tui only; preserve current Herdr layout",
   "versions": {
-    "ink-cursor-particles-v1": {
+    "ink-cursor-particles-v2": {
       "runtime": {},
       "extension": {
         "LICENSE": {
@@ -24,99 +24,99 @@
         },
         "art/cursor-leaf-00.png": {
           "source": "integrations/pretty-tui-cursor-particles/art/cursor-leaf-00.png",
-          "sha256": "5bf82b298e0c0bbc6f6313e65499a59bdee6260144d12661474c63588cdde31f"
+          "sha256": "7260b19b99a7283aba781f66a5e06f9a892aa63e45f0c5ff8dd77bb7af96b7c1"
         },
         "art/cursor-leaf-01.png": {
           "source": "integrations/pretty-tui-cursor-particles/art/cursor-leaf-01.png",
-          "sha256": "73a3ff38336e0336b496cb433cc9677ad4f9729c2662285b4226e99b19350d5a"
+          "sha256": "03c0e3ef010fd7645b84803e52c0277e32ec61d5bd268076a2d655eb9e60e804"
         },
         "art/cursor-leaf-02.png": {
           "source": "integrations/pretty-tui-cursor-particles/art/cursor-leaf-02.png",
-          "sha256": "c5fb695827505f0a6bdfa24b670782f94f0b0dbc6b47ecfe4e498f615091b2a0"
+          "sha256": "47676ecd7ff1bf9e36bf28955ee2ffc1fb78446c9350b298bc4b8e06ea5e1506"
         },
         "art/cursor-leaf-03.png": {
           "source": "integrations/pretty-tui-cursor-particles/art/cursor-leaf-03.png",
-          "sha256": "8875cad4ea3c5c76ce6ca0c56449c3a4aef58bf94eca561969468f9dfef1fe39"
+          "sha256": "ae2c5a74989a5bd45667d57088d8d4e55040739ab2074dd8615780e893c584c2"
         },
         "art/cursor-leaf-04.png": {
           "source": "integrations/pretty-tui-cursor-particles/art/cursor-leaf-04.png",
-          "sha256": "63b667ad81e2679751221eedea5b3e42bd2985b0fe6dc60f5b9bc9dc14bb970b"
+          "sha256": "f0fefa9e0fca7919c453f05bd89a450e8ce2b3c7083fd91c0bb0970f649def67"
         },
         "art/cursor-leaf-05.png": {
           "source": "integrations/pretty-tui-cursor-particles/art/cursor-leaf-05.png",
-          "sha256": "37f8084d45850a1ead28562c22cc4b7e9b93651b011571d052a4e8ad8acbe164"
+          "sha256": "5d9d6250584b14757bc2edea6b59baef59dbd992b99ddac56ed6f7381849e659"
         },
         "art/cursor-leaf-06.png": {
           "source": "integrations/pretty-tui-cursor-particles/art/cursor-leaf-06.png",
-          "sha256": "85e099e6459d7e860e83e851acefbc809ba069590ccc05c3f2dc2e5e7141269a"
+          "sha256": "c7f405be651dccc526a55f943618eae408e5d9e65d18a2ba1a03bf85ce129c84"
         },
         "art/cursor-leaf-07.png": {
           "source": "integrations/pretty-tui-cursor-particles/art/cursor-leaf-07.png",
-          "sha256": "937294c869fc38a74902e966890094a001d380e7ccb18912eabe339da514cf91"
+          "sha256": "e4b3c2b412a8f04a8c9fda3f23655eb0f8c7f5c2ffbd962df55d0c85db038574"
         },
         "art/cursor-leaf-08.png": {
           "source": "integrations/pretty-tui-cursor-particles/art/cursor-leaf-08.png",
-          "sha256": "c8f607e3a7409c4283d592eb3a7f41ac90f42338d555168fadcc6006d0891522"
+          "sha256": "5bcae4280f2f98183a85de6fb764e7cfd4d23dbcdf6432d1f87cf0f5d220311f"
         },
         "art/cursor-leaf-09.png": {
           "source": "integrations/pretty-tui-cursor-particles/art/cursor-leaf-09.png",
-          "sha256": "dccc0e3ea3e1afa9db968cd40c0e5132add212860cad7cddfd47ee8094eb328d"
+          "sha256": "ab3ca824485db8cb05ed4b92c0228b3aab32afef3825943b1f24fd5bbe0ce709"
         },
         "art/cursor-leaf-10.png": {
           "source": "integrations/pretty-tui-cursor-particles/art/cursor-leaf-10.png",
-          "sha256": "2dee76b4b9e785f1d51629198db40c8c422165b05d7dacf656d28c930694ced9"
+          "sha256": "5bfb6c552b0f8526fc8500e116f256ae34f4601b3a371c7a7dcae49ad726623e"
         },
         "art/cursor-leaf-11.png": {
           "source": "integrations/pretty-tui-cursor-particles/art/cursor-leaf-11.png",
-          "sha256": "164532f98e366750cb465ea169fe8fbb68f8c01744d48503a06cc4810439a9c8"
+          "sha256": "d60dc5b4aa5932e6b560ca8b4449dfbf8c4b707928ecda2a68de6ad1196c0506"
         },
         "art/cursor-leaf-12.png": {
           "source": "integrations/pretty-tui-cursor-particles/art/cursor-leaf-12.png",
-          "sha256": "bd185b3cc17d0f742fa7da0b2ec51c2a45acb5198da0a7022ebecda8306e4ae0"
+          "sha256": "5dc235e3e645073b4adc1a3dc1fae514d32b4ea4b775eea9f7a7f73e7be10e7f"
         },
         "art/cursor-leaf-13.png": {
           "source": "integrations/pretty-tui-cursor-particles/art/cursor-leaf-13.png",
-          "sha256": "34438117eefb076b5477d1e68f049f280ba508a0abfb30bd98c3ef22da7396da"
+          "sha256": "aad099333aaebf60d8a695f7c725c8dbfe4334806f1c95517d5af708be611725"
         },
         "art/cursor-leaf-14.png": {
           "source": "integrations/pretty-tui-cursor-particles/art/cursor-leaf-14.png",
-          "sha256": "813dff0593a573054ccfd2f7a1ca22bedfdd6555a308cafd58bed4866d77e708"
+          "sha256": "32c81e7d1b06828e6b9a0dd7087439064281441c78044a19feed43a8079b9e7e"
         },
         "art/cursor-leaf-15.png": {
           "source": "integrations/pretty-tui-cursor-particles/art/cursor-leaf-15.png",
-          "sha256": "62ac78195f116863c1e78d4ce03362f4a20880282209447663922a77f303d036"
+          "sha256": "026f89c480e0cbd7161ab18b43a6bd8d00fe9f15ddd35ba58cc1a202e0554d5c"
         },
         "art/cursor-leaf-16.png": {
           "source": "integrations/pretty-tui-cursor-particles/art/cursor-leaf-16.png",
-          "sha256": "a06f8ac387a5cb7f474a5d6cc7e67899435bafa50252ebff733bc3ad1eaf8865"
+          "sha256": "0271f10be077a0b553a06a5fe3988ebd31d358e2eb64bbbbc6a6433a52deae08"
         },
         "art/cursor-leaf-17.png": {
           "source": "integrations/pretty-tui-cursor-particles/art/cursor-leaf-17.png",
-          "sha256": "2849395efc090c5686709a5abbf30a69ce78ccf30985a317bbcd610f4c20c8df"
+          "sha256": "e37f7cafcdc2bb89d0b0d70892729c58f2bb52d26225c7cc001f87e3a940dc2f"
         },
         "art/cursor-leaf-18.png": {
           "source": "integrations/pretty-tui-cursor-particles/art/cursor-leaf-18.png",
-          "sha256": "aba3a116d1cfecde0022510999908c3106e8ef05a1b03a483613252cb3eec2e6"
+          "sha256": "0c8e13904758907e7f356f6a1b9849d5d9357a50f019c480f1d524e3b86139e2"
         },
         "art/cursor-leaf-19.png": {
           "source": "integrations/pretty-tui-cursor-particles/art/cursor-leaf-19.png",
-          "sha256": "475e38aea29f75a3beda46e0b307ff9f98d329d530c43247586c8cae50a0aba0"
+          "sha256": "fada82fb4d2c56188428eacac4ef63ffdab9ea5aaf25860ea3542983c437006a"
         },
         "art/cursor-leaf-20.png": {
           "source": "integrations/pretty-tui-cursor-particles/art/cursor-leaf-20.png",
-          "sha256": "dfd8a47b9dc5ed4ce0772498a57361326f9cf070c2b3936eaf8f18023b3621fb"
+          "sha256": "e0b1967ec8db2f01068c1665002e6e38fa2e2dd8e841e4e9723ca58060c4f0fb"
         },
         "art/cursor-leaf-21.png": {
           "source": "integrations/pretty-tui-cursor-particles/art/cursor-leaf-21.png",
-          "sha256": "2a35e3db13ab20ec696e490755c4ce17aff1226a0882708337673414c1543b82"
+          "sha256": "bac1b9584ed9b80775ce3f1727db556af22bcbf6dfe807f0e4fdd716e882f688"
         },
         "art/cursor-leaf-22.png": {
           "source": "integrations/pretty-tui-cursor-particles/art/cursor-leaf-22.png",
-          "sha256": "8846ba58009777ba2b6f61ce5da8bebda83732955a15f2570444e76ac00bf9b8"
+          "sha256": "ec8ce49184f2002a8904a83ed6d21747c3cc388daa7fa171452b26b69d948a06"
         },
         "art/cursor-leaf-23.png": {
           "source": "integrations/pretty-tui-cursor-particles/art/cursor-leaf-23.png",
-          "sha256": "b298ab22e45cbf5c72440ecb2309e327d7883b8c25bc416d0632f1bab32567c6"
+          "sha256": "0674e7b14632bfde18a070c8f503a66b0e2081d57155e3e6a07a5dcd7caf0c2a"
         },
         "art/footer-model-v18.png": {
           "source": "integrations/pretty-tui-cursor-particles/art/footer-model-v18.png",
@@ -136,7 +136,7 @@
         },
         "ink-cursor-images.ts": {
           "source": "integrations/pretty-tui-cursor-particles/ink-cursor-images.ts",
-          "sha256": "5dc7bd761f4bb97bbffff6ac3a52c51a135bf5c883d530b8d62e31000b92e24d"
+          "sha256": "8543a8fc5a4d4455c6473b7c25c4ada700c7f69dfcd231d0fab0c08d8d5da8f7"
         },
         "ink-cursor.ts": {
           "source": "integrations/pretty-tui-cursor-particles/ink-cursor.ts",
@@ -160,7 +160,7 @@
         },
         "rounded-bubbles.ts": {
           "source": "integrations/pretty-tui-cursor-particles/rounded-bubbles.ts",
-          "sha256": "77c30ec216b94964b16892ff287e4e5211723efe88d2c03edc9104a070855d09"
+          "sha256": "3c9d46a4d3a637dbf5287a684d1a18b583d8a02bc4fa1082ded5fbae3cedbdb7"
         },
         "transcript-margins.ts": {
           "source": "integrations/pretty-tui-cursor-particles/transcript-margins.ts",

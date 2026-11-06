@@ -14,17 +14,19 @@ export function nativeFrameCursor(data: string): CursorPosition | undefined {
   return match ? { row: Number(match[1]), col: Number(match[2]) } : undefined;
 }
 
-/** A transparent one-cell cursor overlay. No changes to text or cursor markers. */
+/** Transparent cursor overlay, up to one Chinese glyph wide. */
 export class InkCursorImagePainter {
   private cache = new Map<string, { id: number; uploaded: boolean }>();
   private placed?: number;
   private style?: string;
   private started = 0;
+  private columns = Number.POSITIVE_INFINITY;
   position?: CursorPosition;
   constructor(private now: () => number = Date.now) {}
   get visible() { return this.placed !== undefined; }
   get animated() { return this.style === "leaf" && !!this.position; }
-  paint(position: CursorPosition | undefined, style: unknown, reset = false): string {
+  paint(position: CursorPosition | undefined, style: unknown, reset = false, columns = Number.POSITIVE_INFINITY): string {
+    this.columns = columns;
     let out = "";
     if (reset) {
       for (const entry of this.cache.values()) entry.uploaded = false;
@@ -49,9 +51,10 @@ export class InkCursorImagePainter {
       entry.uploaded = true;
     }
     this.placed = entry.id;
-    return out + `${ESC}[${position.row};${position.col}H` + kitty(`a=p,i=${entry.id},p=1,c=1,r=1,z=2,C=1,q=2`);
+    const width = style === "ink" ? 1 : Math.max(1, Math.min(2, columns - position.col + 1));
+    return out + `${ESC}[${position.row};${position.col}H` + kitty(`a=p,i=${entry.id},p=1,c=${width},r=1,z=2,C=1,q=2`);
   }
-  tick() { return this.paint(this.position, this.style); }
+  tick() { return this.paint(this.position, this.style, false, this.columns); }
   dispose() {
     const out = [...this.cache.values()].map(entry => kitty(`a=d,d=I,i=${entry.id},q=2`)).join("");
     this.cache.clear();this.position = undefined;this.placed = undefined;this.style = undefined;return out;

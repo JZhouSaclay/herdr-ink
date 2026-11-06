@@ -69,14 +69,14 @@ test('frame images cannot override final native text/IME cursor, including uncha
  assert.equal(insertFrameImages(hidden,''),hidden);
 });
 
-test('one-cell leaf particles follow the caret and keep looping on status redraws',()=>{
+test('leaf particles span one Chinese glyph and keep looping on status redraws',()=>{
  let now=0;const painter=new InkCursorImagePainter(()=>now);
  const target={row:12,col:23};
  const native='\x1b[?2026h\x1b[12;23H\x1b[?25h\x1b[?2026l';
  assert.deepEqual(nativeFrameCursor(native),target);
  assert.equal(nativeFrameCursor(native.replace('?25h','?25l')),undefined);
  const first=painter.paint(target,'leaf');
- assert.ok(first.includes('c=1,r=1,z=2,C=1'));
+ assert.ok(first.includes('c=2,r=1,z=2,C=1'));
  assert.ok(first.includes('\x1b[12;23H'));assert.ok(first.includes('a=t'));
  assert.equal(painter.animated,true);
  now=400;const second=painter.tick();assert.ok(second.includes('a=d,d=i'));assert.notEqual(second,first);
@@ -89,6 +89,16 @@ test('one-cell leaf particles follow the caret and keep looping on status redraw
  painter.paint(target,'ink');assert.equal(painter.animated,false);
  assert.ok(painter.paint(undefined,'leaf').includes('a=d'));assert.equal(painter.visible,false);
  assert.ok(painter.dispose().includes('a=d,d=I'));assert.equal(painter.dispose(),'');
+});
+
+test('wider leaf cursor fits the right edge without moving its text anchor',()=>{
+ let now=0;const painter=new InkCursorImagePainter(()=>now);
+ assert.ok(painter.paint({row:8,col:79},'leaf',false,80).includes('c=2,r=1'));
+ const edge=painter.paint({row:8,col:80},'leaf',false,80);
+ assert.ok(edge.includes('c=1,r=1'));assert.ok(edge.includes('\x1b[8;80H'));
+ now=200;assert.ok(painter.tick().includes('c=1,r=1'),'animated frames retain viewport bounds');
+ assert.ok(painter.paint({row:8,col:40},'ink',false,80).includes('c=1,r=1'),'ink stroke keeps original width');
+ painter.dispose();
 });
 
 test('cursor image reset reuploads its assets and fallback removes its placement',()=>{
