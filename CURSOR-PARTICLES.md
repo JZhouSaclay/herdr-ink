@@ -1,28 +1,28 @@
-# 一个汉字宽的落叶光标
+# 水墨弯叶光标 v4
 
-版本：`ink-cursor-particles-v3`。
+版本：`ink-cursor-particles-v4`。
 
-默认光标为七片取自指定 SVG 的水墨柳叶，在一个汉字宽（两个终端半角列）内从右上往左下错落地飘落、无限循环。24 帧、每帧 100ms，透明背景；叶子像素覆盖率约 8.6%–13.7%，可以叠在现有文字上。只重绘光标图层，不刷新整段对话，也不改输入文字和列宽。
+用户要求叶子更小、更弯、飘落更飘逸。本次通过 Magpie 本地图片接口调用已配置的 `codex/gpt-image-2`，以原 D 水墨 SVG 为参考，实际生成一片弯曲的写意柳叶；原画保存在 `/Users/jiezhou/herdr-ink-study/reference/gpt-image-curved-leaf-v4.png`。请求提示词和参考来源保存在同名 `.request.json` 中。没有将程序几何形状当作生图结果。
 
-动画每一帧都在图像命令之后重新写回 Pi 的文字光标坐标。原生硬件开关保留开启来取消反色方块，实际硬件竖线隐藏，由叶群代替；原生文本位置和 CURSOR_MARKER 保留。图层会随焦点标记、覆盖层、终端停止和重载隐藏/清理。
+七片叶子较 v3 缩小约两成，保留一个汉字宽的活动范围，从右上往左下沿弧线飘落。每片有不同的风速变化、摇摆与轻微侧翻。64 帧、每帧 60ms，3.84 秒循环；光标移动时继续当前动画，不从头重播。背景透明，叶片覆盖率约 3.8%–7.3%，可以叠在文字上。只刷新光标图层，不重绘整段对话。
 
-设计预览：`/Users/jiezhou/herdr-ink-study/ink-cursor-leaf-v3-preview.gif`。这是设计示意，叶群叠在“留”字上，并非原生窗口截图。19 项光标、图片清理、动效生命周期、footer 和输入框检查通过；初版曾用独立后台 Pi 验证位置与重载。本版修改图像尺寸与叶片大小，增加了右边缘边界检查，定位仍沿用原生坐标。中文输入法的实际候选窗仍需在当前会话加载后使用确认。
+设计动图：`/Users/jiezhou/herdr-ink-study/ink-cursor-leaf-v4-preview.gif`。
+
+放大细节：`/Users/jiezhou/herdr-ink-study/ink-cursor-leaf-v4-detail.gif`。
+
+这是设计预览，并非原生窗口截图。20 项光标、缓存、循环连续性、图层清理、输入框和 footer 检查通过；另外使用独立后台 Pi 检查输入、移动、多行和实际重载后的位置，不切换用户窗口。原生文字坐标和 CURSOR_MARKER 保留，实际中文输入法候选窗仍待当前会话使用确认。
 
 当前会话在回复结束后输入 `/reload` 加载。配置文件是 `/Users/jiezhou/.pi/agent/pretty-tui.json`：
 
-- `"inkCursor": "leaf"`：循环微型叶群，默认。
+- `"inkCursor": "leaf"`：循环弯叶，默认。
 - `"inkCursor": "ink"`：静态干笔墨痕。
-- `"inkCursor": "bar"`：此前修正位置的细竖线。
-- `"inkCursorMotion": false`：保留静态叶群，停止动画。
+- `"inkCursor": "bar"`：细竖线。
+- `"inkCursorMotion": false`：静态叶群。
 
-本次备份仅覆盖 pretty-tui，保留当前 Herdr 布局和其他正在修改的界面文件。扩展完整快照在 `/Users/jiezhou/herdr-ink-study/integrations/pretty-tui-cursor-particles/`；原有 v17、v18 和光标 fix2 标签与恢复包继续保留。
+本次备份仅覆盖 pretty-tui，保留当前 Herdr 布局与其他正在修改的界面文件。完整扩展快照位于 `/Users/jiezhou/herdr-ink-study/integrations/pretty-tui-cursor-particles/`；此前 v1、v2、v3 标签与恢复包继续保留。
 
-恢复包：`/Users/jiezhou/herdr-ink-study/.checkpoints/ink-cursor-particles-v3.zip`。检查后加 `--apply` 恢复扩展，覆盖前自动备份：
+恢复包：`/Users/jiezhou/herdr-ink-study/.checkpoints/ink-cursor-particles-v4.zip`。先检查，再加 `--apply` 恢复；覆盖前自动备份：
 
 ```bash
-python3 /Users/jiezhou/herdr-ink-study/scripts/restore_ui_checkpoint.py --archive /Users/jiezhou/herdr-ink-study/.checkpoints/ink-cursor-particles-v3.zip
+python3 /Users/jiezhou/herdr-ink-study/scripts/restore_ui_checkpoint.py --archive /Users/jiezhou/herdr-ink-study/.checkpoints/ink-cursor-particles-v4.zip
 ```
-
-v2 根据实际截图扩大范围：原先一个半角格只有约半个汉字宽，现为一个汉字宽；叶片加大并加深墨色，轨迹横向铺开。最右一列自动缩到剩余宽度，定位不向左偏移。
-
-v3 使用用户提供的 `/Users/jiezhou/herdr-ink-study/candidates/ink-generation-D-F/D-ink-vector.svg`，原样备份到 `/Users/jiezhou/herdr-ink-study/reference/cursor-willow-D.svg`。由 resvg 渲染真实路径，保留原叶形与浓淡笔触，缩小时增强淡墨的可见度。七片柳叶走平行而略错开的右上至左下轨迹，并轻微转动；所有非循环跳转的步骤都检查为 x 减小、y 增大。放大示意见 `/Users/jiezhou/herdr-ink-study/ink-cursor-leaf-v3-detail.gif`。

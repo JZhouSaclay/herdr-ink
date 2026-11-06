@@ -1,15 +1,17 @@
 {
-  "source": "reference/cursor-willow-D.svg",
-  "source_sha256": "b97b16418828f723ae89eb2ab1fa0a60093ddbb1ae35d6081717739837d82978",
-  "rendered_from_svg": true,
+  "source": "reference/gpt-image-curved-leaf-v4.png",
+  "source_sha256": "d06fde5f734b1202903d87271ba550b64b136b43d32383f21cc63b5c2b5e38d1",
+  "generated_by": "codex/gpt-image-2 via Magpie",
+  "rendered_from_svg": false,
   "source_crop_size": [
-    903,
-    683
+    1260,
+    915
   ],
-  "frames": 24,
+  "frames": 64,
+  "frame_ms": 60,
   "leaf_count": 7,
   "direction": "upper-right to lower-left",
   "all_non_wrap_steps_left_and_down": true,
-  "coverage_min": 0.08642578125,
-  "coverage_max": 0.137451171875
+  "coverage_min": 0.03759765625,
+  "coverage_max": 0.07275390625
 }

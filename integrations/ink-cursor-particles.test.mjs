@@ -11,7 +11,7 @@ const {createJiti}=require('jiti');
 const loader=createJiti(import.meta.url,{moduleCache:false,alias:{'@earendil-works/pi-tui':require.resolve('@earendil-works/pi-tui')}});
 const {createInkCursor}=await loader.import(resolve(import.meta.dirname,'./pretty-tui-cursor-particles/ink-cursor.ts'));
 const {insertFrameImages,installRoundedBubbles}=await loader.import(resolve(import.meta.dirname,'./pretty-tui-cursor-particles/rounded-bubbles.ts'));
-const {InkCursorImagePainter,nativeFrameCursor}=await loader.import(resolve(import.meta.dirname,'./pretty-tui-cursor-particles/ink-cursor-images.ts'));
+const {CURSOR_FRAME_COUNT,CURSOR_FRAME_MS,InkCursorImagePainter,nativeFrameCursor}=await loader.import(resolve(import.meta.dirname,'./pretty-tui-cursor-particles/ink-cursor-images.ts'));
 const tui=await loader.import(require.resolve('@earendil-works/pi-tui'));
 function fake(previous=false){const writes=[];let hardware=previous;return {writes,getShowHardwareCursor(){return hardware;},setShowHardwareCursor(value){hardware=value;},terminal:{write(value){writes.push(value);}}};}
 
@@ -98,6 +98,23 @@ test('wider leaf cursor fits the right edge without moving its text anchor',()=>
  assert.ok(edge.includes('c=1,r=1'));assert.ok(edge.includes('\x1b[8;80H'));
  now=200;assert.ok(painter.tick().includes('c=1,r=1'),'animated frames retain viewport bounds');
  assert.ok(painter.paint({row:8,col:40},'ink',false,80).includes('c=1,r=1'),'ink stroke keeps original width');
+ painter.dispose();
+});
+
+test('full breeze loop reuses bounded image assets and does not restart when caret moves',()=>{
+ let now=0;const painter=new InkCursorImagePainter(()=>now);const ids=new Set();
+ const placement=output=>Number(/a=p,i=(\d+)/.exec(output)[1]);
+ let last;
+ for(let i=0;i<CURSOR_FRAME_COUNT;i++){
+  now=i*CURSOR_FRAME_MS;last=placement(painter.paint({row:8,col:30},'leaf'));ids.add(last);
+ }
+ assert.equal(ids.size,CURSOR_FRAME_COUNT,'all generated frames are reachable');
+ const next=painter.paint({row:9,col:4},'leaf');
+ assert.equal(placement(next),last,'moving caret keeps the current animation frame');
+ now=CURSOR_FRAME_COUNT*CURSOR_FRAME_MS;
+ const wrapped=painter.tick();
+ assert.equal(placement(wrapped),[...ids][0],'the loop closes on its first frame');
+ assert.ok(!wrapped.includes('a=t'),'next cycle reuses the uploaded first frame');
  painter.dispose();
 });
 

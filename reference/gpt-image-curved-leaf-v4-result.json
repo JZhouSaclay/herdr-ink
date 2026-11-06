@@ -1,0 +1,11 @@
+{
+  "state": "completed",
+  "model": "codex/gpt-image-2",
+  "image": "/Users/jiezhou/herdr-ink-study/reference/gpt-image-curved-leaf-v4.png",
+  "usage": {
+    "input_tokens": 1032,
+    "output_tokens": 1587,
+    "total_tokens": 2619
+  },
+  "completed_at": "2026-11-06T06:27:42.899441+00:00"
+}

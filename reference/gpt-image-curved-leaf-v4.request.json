@@ -1,0 +1,7 @@
+{
+  "model": "codex/gpt-image-2",
+  "prompt": "Use the reference image for the authentic Chinese ink-wash texture. Paint ONE isolated slender willow leaf, with a noticeably bowed, graceful C-shaped body and a gently hooked, finely tapering tip. The middle of the leaf should bow away from the straight line joining its tip and stem by about one fifth of its length. It should look light, flexible, caught in a soft breeze. A short delicate stem. Expressive real brushwork with rich dark ink accents, soft grey washes, restrained dry-brush gaps, organic asymmetric edges, subtle paper bleeding within the leaf. Retain enough contrast to read when reduced to a tiny animated cursor. Slender, curved and elegant rather than broad or chunky. Entire leaf fully visible with generous blank margins. Upper-right tip, lower-left stem, balanced diagonal composition. Pure clean white background, no paper texture in the background, no shadow, no writing, no seal, no border, no branch, no extra leaves, no feather. This is a hand-painted ink-wash art asset, not a flat vector icon or a geometric polygon.",
+  "reference": "reference/cursor-willow-D.svg",
+  "route": "Magpie local images API",
+  "started_at": "2026-11-06T06:27:04.974997+00:00"
+}

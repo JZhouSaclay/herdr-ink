@@ -3,8 +3,10 @@ import { allocateImageId } from "@earendil-works/pi-tui";
 
 const ESC = "\x1b";
 const kitty = (controls: string, data = "") => `${ESC}_G${controls};${data}${ESC}\\`;
+export const CURSOR_FRAME_COUNT = 64;
+export const CURSOR_FRAME_MS = 60;
 const ART = new Map<string, string>();
-for (const key of ["ink", ...Array.from({ length: 24 }, (_, i) => `leaf-${String(i).padStart(2, "0")}`)]) {
+for (const key of ["ink", ...Array.from({ length: CURSOR_FRAME_COUNT }, (_, i) => `leaf-${String(i).padStart(2, "0")}`)]) {
   ART.set(key, readFileSync(new URL(`./art/cursor-${key}.png`, import.meta.url)).toString("base64"));
 }
 export type CursorPosition = { row: number; col: number };
@@ -36,9 +38,10 @@ export class InkCursorImagePainter {
     if (!position || !["leaf", "leaf-still", "ink"].includes(String(style))) {
       this.position = undefined;this.style = undefined;return out;
     }
-    if (position.row !== this.position?.row || position.col !== this.position?.col || style !== this.style) this.started = this.now();
+    // Moving the caret carries the running breeze with it instead of restarting.
+    if (!this.position || style !== this.style) this.started = this.now();
     this.position = { ...position };this.style = String(style);
-    const frame = this.animated ? Math.floor((this.now() - this.started) / 100) % 24 : 0;
+    const frame = this.animated ? Math.floor((this.now() - this.started) / CURSOR_FRAME_MS) % CURSOR_FRAME_COUNT : 0;
     const key = style === "ink" ? "ink" : `leaf-${String(frame).padStart(2,"0")}`;
     let entry = this.cache.get(key);
     if (!entry) { entry = { id: allocateImageId(), uploaded: false };this.cache.set(key, entry); }

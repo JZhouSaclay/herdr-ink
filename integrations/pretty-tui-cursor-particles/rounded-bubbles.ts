@@ -1,4 +1,4 @@
-import { InkCursorImagePainter, nativeFrameCursor } from "./ink-cursor-images.js";
+import { CURSOR_FRAME_MS, InkCursorImagePainter, nativeFrameCursor } from "./ink-cursor-images.js";
 import { FooterImagePainter, stripFooterMarkers } from "./ink-footer.js";
 import { INK_FRAME_FLAG, inkFrameAlpha, type FrameCell } from "./ink-frame.js";
 import { deflateSync } from "node:zlib";
@@ -204,7 +204,7 @@ export function installRoundedBubbles(prototype: any, onError: (error: unknown) 
         states.delete(screen);
         screen.invalidate?.();screen.requestRender?.();onError(error);
       }
-    }, 100);
+    }, CURSOR_FRAME_MS);
     timer.unref?.();timers.set(screen, timer);
   };
   let failed = false;
