@@ -1,0 +1,15 @@
+{
+  "source": "reference/cursor-willow-D.svg",
+  "source_sha256": "b97b16418828f723ae89eb2ab1fa0a60093ddbb1ae35d6081717739837d82978",
+  "rendered_from_svg": true,
+  "source_crop_size": [
+    903,
+    683
+  ],
+  "frames": 24,
+  "leaf_count": 7,
+  "direction": "upper-right to lower-left",
+  "all_non_wrap_steps_left_and_down": true,
+  "coverage_min": 0.08642578125,
+  "coverage_max": 0.137451171875
+}

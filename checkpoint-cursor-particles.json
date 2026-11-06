@@ -1,9 +1,9 @@
 {
-  "tag": "ink-cursor-particles-v2",
-  "default_version": "ink-cursor-particles-v2",
+  "tag": "ink-cursor-particles-v3",
+  "default_version": "ink-cursor-particles-v3",
   "scope": "pretty-tui only; preserve current Herdr layout",
   "versions": {
-    "ink-cursor-particles-v2": {
+    "ink-cursor-particles-v3": {
       "runtime": {},
       "extension": {
         "LICENSE": {
@@ -24,99 +24,99 @@
         },
         "art/cursor-leaf-00.png": {
           "source": "integrations/pretty-tui-cursor-particles/art/cursor-leaf-00.png",
-          "sha256": "7260b19b99a7283aba781f66a5e06f9a892aa63e45f0c5ff8dd77bb7af96b7c1"
+          "sha256": "a1d369603c1711a96e3f728790ae7df8b92369a7f718f647d5b8743e26f2bfe3"
         },
         "art/cursor-leaf-01.png": {
           "source": "integrations/pretty-tui-cursor-particles/art/cursor-leaf-01.png",
-          "sha256": "03c0e3ef010fd7645b84803e52c0277e32ec61d5bd268076a2d655eb9e60e804"
+          "sha256": "2103dd6ce33b2a4800b439efecf57621297ec872926a876870dadd8c585bd392"
         },
         "art/cursor-leaf-02.png": {
           "source": "integrations/pretty-tui-cursor-particles/art/cursor-leaf-02.png",
-          "sha256": "47676ecd7ff1bf9e36bf28955ee2ffc1fb78446c9350b298bc4b8e06ea5e1506"
+          "sha256": "bfcacbd6def69769f8df1d1a362f62895ddaa1637558a97567195bc45efc8cfc"
         },
         "art/cursor-leaf-03.png": {
           "source": "integrations/pretty-tui-cursor-particles/art/cursor-leaf-03.png",
-          "sha256": "ae2c5a74989a5bd45667d57088d8d4e55040739ab2074dd8615780e893c584c2"
+          "sha256": "9a6655a290eabf571293de1871e3bbd1ce5972fa21c9e8b2a35be43b0ce4eee7"
         },
         "art/cursor-leaf-04.png": {
           "source": "integrations/pretty-tui-cursor-particles/art/cursor-leaf-04.png",
-          "sha256": "f0fefa9e0fca7919c453f05bd89a450e8ce2b3c7083fd91c0bb0970f649def67"
+          "sha256": "0662fbc7e8df6ef91c2a6ec4457662d4cb8ce4edfe6755366d5418e8d63d2f38"
         },
         "art/cursor-leaf-05.png": {
           "source": "integrations/pretty-tui-cursor-particles/art/cursor-leaf-05.png",
-          "sha256": "5d9d6250584b14757bc2edea6b59baef59dbd992b99ddac56ed6f7381849e659"
+          "sha256": "3bf0896722f95b61a661f289329eba972fe4360549357aa09cbfba82d4375708"
         },
         "art/cursor-leaf-06.png": {
           "source": "integrations/pretty-tui-cursor-particles/art/cursor-leaf-06.png",
-          "sha256": "c7f405be651dccc526a55f943618eae408e5d9e65d18a2ba1a03bf85ce129c84"
+          "sha256": "eb448509a6acc00e90344257ff805a74be85e31736d242bfef30b385b6e0bede"
         },
         "art/cursor-leaf-07.png": {
           "source": "integrations/pretty-tui-cursor-particles/art/cursor-leaf-07.png",
-          "sha256": "e4b3c2b412a8f04a8c9fda3f23655eb0f8c7f5c2ffbd962df55d0c85db038574"
+          "sha256": "3471ea9aed1c1530155eb7ef4a08a2b59d214d96ffe55f9fadc59a28eeddd6d2"
         },
         "art/cursor-leaf-08.png": {
           "source": "integrations/pretty-tui-cursor-particles/art/cursor-leaf-08.png",
-          "sha256": "5bcae4280f2f98183a85de6fb764e7cfd4d23dbcdf6432d1f87cf0f5d220311f"
+          "sha256": "af2160a8580c0b9a324507d823b430a0556dad94cf6d083911cdc843ad51ac59"
         },
         "art/cursor-leaf-09.png": {
           "source": "integrations/pretty-tui-cursor-particles/art/cursor-leaf-09.png",
-          "sha256": "ab3ca824485db8cb05ed4b92c0228b3aab32afef3825943b1f24fd5bbe0ce709"
+          "sha256": "aa9871099cca852e702736fb9d76988ae5b134ed35ad0ff8cfcf53e4d17f0a19"
         },
         "art/cursor-leaf-10.png": {
           "source": "integrations/pretty-tui-cursor-particles/art/cursor-leaf-10.png",
-          "sha256": "5bfb6c552b0f8526fc8500e116f256ae34f4601b3a371c7a7dcae49ad726623e"
+          "sha256": "c1d151dbdef7efc3653283b699c6aded7cc0eb6b246f75be3f83065fa8a09043"
         },
         "art/cursor-leaf-11.png": {
           "source": "integrations/pretty-tui-cursor-particles/art/cursor-leaf-11.png",
-          "sha256": "d60dc5b4aa5932e6b560ca8b4449dfbf8c4b707928ecda2a68de6ad1196c0506"
+          "sha256": "deef36bb383c903c95617c21a83940fda1bf2865a41dd09f054f3fbf516fb7d5"
         },
         "art/cursor-leaf-12.png": {
           "source": "integrations/pretty-tui-cursor-particles/art/cursor-leaf-12.png",
-          "sha256": "5dc235e3e645073b4adc1a3dc1fae514d32b4ea4b775eea9f7a7f73e7be10e7f"
+          "sha256": "8014f8f3e47be5681fa9c2c95faa6d9c0ca525c0f4280f3ceb2cc4a24b9c461f"
         },
         "art/cursor-leaf-13.png": {
           "source": "integrations/pretty-tui-cursor-particles/art/cursor-leaf-13.png",
-          "sha256": "aad099333aaebf60d8a695f7c725c8dbfe4334806f1c95517d5af708be611725"
+          "sha256": "f6873a4fc06e2d0b765e7cfb5e5ffdb68a6488d60886bda35c4e94d64ec99cab"
         },
         "art/cursor-leaf-14.png": {
           "source": "integrations/pretty-tui-cursor-particles/art/cursor-leaf-14.png",
-          "sha256": "32c81e7d1b06828e6b9a0dd7087439064281441c78044a19feed43a8079b9e7e"
+          "sha256": "bcea51fb72d6bfe984b2f6241d73c6a199c9c188e073dc629abe9c5fd6fab0ac"
         },
         "art/cursor-leaf-15.png": {
           "source": "integrations/pretty-tui-cursor-particles/art/cursor-leaf-15.png",
-          "sha256": "026f89c480e0cbd7161ab18b43a6bd8d00fe9f15ddd35ba58cc1a202e0554d5c"
+          "sha256": "9909f5266feaf38191bc3ef1ca78d8604d6cab9f17e3489791d7193b3f90a03f"
         },
         "art/cursor-leaf-16.png": {
           "source": "integrations/pretty-tui-cursor-particles/art/cursor-leaf-16.png",
-          "sha256": "0271f10be077a0b553a06a5fe3988ebd31d358e2eb64bbbbc6a6433a52deae08"
+          "sha256": "1d29999dbc2dcd50b42fe51764b78c89b8035db4e236ac3c72b8044ef29b1d04"
         },
         "art/cursor-leaf-17.png": {
           "source": "integrations/pretty-tui-cursor-particles/art/cursor-leaf-17.png",
-          "sha256": "e37f7cafcdc2bb89d0b0d70892729c58f2bb52d26225c7cc001f87e3a940dc2f"
+          "sha256": "8f72bbb76ffba877771938bfe0d7014b76c32b01b320efe6a615c8ea4ae5cccf"
         },
         "art/cursor-leaf-18.png": {
           "source": "integrations/pretty-tui-cursor-particles/art/cursor-leaf-18.png",
-          "sha256": "0c8e13904758907e7f356f6a1b9849d5d9357a50f019c480f1d524e3b86139e2"
+          "sha256": "aa86ad04ee12eaf97c7e18ffd3ac9f93b3e7876407085ecd4a24433bbbfc3e62"
         },
         "art/cursor-leaf-19.png": {
           "source": "integrations/pretty-tui-cursor-particles/art/cursor-leaf-19.png",
-          "sha256": "fada82fb4d2c56188428eacac4ef63ffdab9ea5aaf25860ea3542983c437006a"
+          "sha256": "1be7de7f1ffb6d3d2df3c2b5e9d097c7bdb1782c6510fbedf3326349582c0550"
         },
         "art/cursor-leaf-20.png": {
           "source": "integrations/pretty-tui-cursor-particles/art/cursor-leaf-20.png",
-          "sha256": "e0b1967ec8db2f01068c1665002e6e38fa2e2dd8e841e4e9723ca58060c4f0fb"
+          "sha256": "4bc6ce20d5645132a25669c40567360ef6fa843791b52db393c168eb6fc20db4"
         },
         "art/cursor-leaf-21.png": {
           "source": "integrations/pretty-tui-cursor-particles/art/cursor-leaf-21.png",
-          "sha256": "bac1b9584ed9b80775ce3f1727db556af22bcbf6dfe807f0e4fdd716e882f688"
+          "sha256": "d02b49a7a27ea32db7d3fde666deed367004e306b47c8439d27ff3b68d3c3c7f"
         },
         "art/cursor-leaf-22.png": {
           "source": "integrations/pretty-tui-cursor-particles/art/cursor-leaf-22.png",
-          "sha256": "ec8ce49184f2002a8904a83ed6d21747c3cc388daa7fa171452b26b69d948a06"
+          "sha256": "1691a947300afc2d5629c57e6487583a2a419624557b15a7e99225bd4b13b3bc"
         },
         "art/cursor-leaf-23.png": {
           "source": "integrations/pretty-tui-cursor-particles/art/cursor-leaf-23.png",
-          "sha256": "0674e7b14632bfde18a070c8f503a66b0e2081d57155e3e6a07a5dcd7caf0c2a"
+          "sha256": "581d48a2ffde1dfed3a873ed4e63e8f85eda2bd4251bedc6d2cad985ac306e28"
         },
         "art/footer-model-v18.png": {
           "source": "integrations/pretty-tui-cursor-particles/art/footer-model-v18.png",

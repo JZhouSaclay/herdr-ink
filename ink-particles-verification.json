@@ -1,12 +1,12 @@
 {
-  "tag": "ink-cursor-particles-v2",
+  "tag": "ink-cursor-particles-v3",
   "leaf_count": 7,
   "frames": 24,
   "frame_ms": 100,
   "loop": true,
   "width_cells": 2,
-  "coverage_min": 0.116,
-  "coverage_max": 0.141,
+  "coverage_min": 0.08642578125,
+  "coverage_max": 0.137451171875,
   "checks_passed": 19,
   "native_trace_frames": 0,
   "positions_match_after_reload": null,
@@ -18,5 +18,10 @@
     64
   ],
   "right_edge_clamped": true,
-  "prior_native_trace_version": "ink-cursor-particles-v1"
+  "prior_native_trace_version": "ink-cursor-particles-v1",
+  "direction": "upper-right to lower-left",
+  "source_svg": "reference/cursor-willow-D.svg",
+  "source_sha256": "b97b16418828f723ae89eb2ab1fa0a60093ddbb1ae35d6081717739837d82978",
+  "rendered_from_svg": true,
+  "trajectory_checks_passed": true
 }
