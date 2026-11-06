@@ -1,5 +1,5 @@
 {
-  "tag": "ink-study-v18-cursor",
+  "tag": "ink-study-v18-cursor-fix1",
   "baseline_tag": "ink-study-v17",
   "created_at": "2026-11-05T17:07:33.824503+00:00",
   "versions": {
@@ -2309,7 +2309,7 @@
         },
         "README.md": {
           "source": "integrations/pretty-tui-v18-cursor/README.md",
-          "sha256": "099c2a078e88d34a34052cd34a1fd8ea59f0638fa403cdfec233ff3a828db75f"
+          "sha256": "9af24fe241595a7e2522d8d321a439042e147c2d328b777be14a18c650ef6f18"
         },
         "activity-timeline.ts": {
           "source": "integrations/pretty-tui-v18-cursor/activity-timeline.ts",
@@ -2329,11 +2329,11 @@
         },
         "index.ts": {
           "source": "integrations/pretty-tui-v18-cursor/index.ts",
-          "sha256": "bddc84a22f377771f20c25bf1ebd260cc1e81bf58c12abf61eb9ec1b09cc068a"
+          "sha256": "1ce87a14065ffe83a794f1d621136f1f3084fb3b7ab45c0d1e31fbfef5ca56b8"
         },
         "ink-cursor.ts": {
           "source": "integrations/pretty-tui-v18-cursor/ink-cursor.ts",
-          "sha256": "9bbdc7555c93472bed0689a5e63277b1801f0434e0c791e64591478f44e2f8a8"
+          "sha256": "8e2e0d1974b4252a52b4b8ac0d348bb024df2419147cc216f7ee0c688a7b14cf"
         },
         "ink-footer.ts": {
           "source": "integrations/pretty-tui-v18-cursor/ink-footer.ts",

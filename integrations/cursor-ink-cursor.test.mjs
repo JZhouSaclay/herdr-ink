@@ -39,3 +39,15 @@ test('real Pi cursor resolution removes inverse video while preserving text, col
   assert.ok(old.includes('\x1b[7m'));
  }
 });
+
+test('cached style must re-enable hardware cursor after Pi reload reapplies false',()=>{
+ const host=fake();const cursor=createInkCursor(()=>'bar');
+ cursor.attach(host);host.setShowHardwareCursor(false);
+ const marked=tui.CURSOR_MARKER+tui.renderFakeCursor('中');
+ assert.ok(tui.TuiAltScreen.prototype.resolveFakeCursors.call({showHardwareCursor:host.getShowHardwareCursor()},[marked])[0].includes('\x1b[7m'));
+ cursor.attach(host);
+ assert.equal(host.getShowHardwareCursor(),true);
+ assert.equal(host.writes.length,2,'restore shape and color after the runtime-settings override');
+ assert.equal(tui.TuiAltScreen.prototype.resolveFakeCursors.call({showHardwareCursor:host.getShowHardwareCursor()},[marked])[0],tui.CURSOR_MARKER+'中');
+ cursor.dispose();assert.equal(host.getShowHardwareCursor(),false,'original preference is still restored');
+});

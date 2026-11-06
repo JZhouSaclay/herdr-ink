@@ -25,7 +25,9 @@ export function createInkCursor(getStyle: () => unknown) {
       const style = typeof configured === "string" ? STYLES[configured] : undefined;
       if (style === undefined) { restore(tui); return; }
       const state = states.get(tui);
-      if (state?.style === style) return;
+      // Pi reapplies showHardwareCursor=false during /reload after extensions
+      // have attached. A cached shape does not mean the fake cursor is disabled.
+      if (state?.style === style && tui.getShowHardwareCursor()) return;
       // Send shape/color before enabling the terminal cursor; no transient block.
       tui.terminal.write(`\x1b[${style} q${INK}`);
       if (!state) states.set(tui, { previous: tui.getShowHardwareCursor(), style });

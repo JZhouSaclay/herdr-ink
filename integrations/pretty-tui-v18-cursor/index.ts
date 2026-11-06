@@ -854,6 +854,9 @@ export default function prettyTui(pi: ExtensionAPI) {
         if (ink) this.borderColor = inkForeground;
         lines = originalEditorRender.call(this, innerWidth) as string[];
       } finally { this.borderColor = originalBorderColor; }
+      // Reassert after Pi's /reload runtime-settings pass, before the TUI
+      // resolves fake-cursor markers into reverse-video cells.
+      inkCursor.attach(this.tui ?? currentTui);
       const nativeInk = ink && fullscreenTui && roundedBubbles.available();
       const frameKey = editorInkKeys.get(this) ?? bubbleKey();
       editorInkKeys.set(this, frameKey);
