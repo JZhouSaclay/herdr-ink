@@ -315,6 +315,7 @@ export default class Agents extends View {
       return h_flex()
         .id(`ag-${a.address}`)
         .relative()
+        .mb(-4)
         .pl(10).pr(46)
         .h(44)
         .flex_none()
@@ -415,7 +416,7 @@ export default class Agents extends View {
       .when(list.length === 0 && !collapsed, (el) =>
         el.child(div().px(12).text_size(12).text_color(t.dim).child("尚无 Agent 状态。Agent 上报状态后会出现在这里。")),
       )
-      .child(v_flex().id("ag-list").flex_1().min_h(0).px(collapsed ? 0 : 8).pt(8).gap(6).overflow_y_scrollbar().mode("always").children(rows))
+      .child(v_flex().id("ag-list").flex_1().min_h(0).px(collapsed ? 0 : 8).pt(8).gap(0).overflow_y_scrollbar().mode("always").children(rows))
       .when(collapsed, (el) =>
         el.child(
           h_flex()

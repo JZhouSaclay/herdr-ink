@@ -1,5 +1,7 @@
 PASS source / ink-agents
+PASS source / ink-changes
 PASS source / ink-chrome
+PASS source / ink-files
 PASS source / ink-pane
 PASS source / ink-spaces
 PASS source / ink-status
@@ -25,3 +27,4 @@ PASS real render events / ink-tabs / taller proportioned bamboo, hover, safe clo
 PASS crane sequence / ink-spaces / left-facing GIF, 2000ms stop at flight pose 06, reselection, stale cancellation, text clearance
 PASS crane sequence / ink-agents / left-facing GIF, 2000ms stop at flight pose 06, reselection, stale cancellation, text clearance
 PASS sidebar objects / stable across rename, reorder and grouping; fixed width; Pi prefix and age removed; real session metadata; narrow rail
+PASS scroll / readonly native soft wrap, unmodified source, stale read protection, diff line numbering and variable-height untruncated rows

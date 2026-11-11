@@ -2,7 +2,7 @@
 
 明亮的近白工作界面，左侧每行有实际书写的墨痕，顶部是竹纹与束绳构成的单片竹简。山水与疏竹落在右下，左上留白。
 
-![原生预览，虚构数据](preview-v7.png)
+![原生预览，虚构数据](preview.png)
 
 ## What you see
 
@@ -28,9 +28,9 @@
 
 ## Built from
 
-- 正式布局：`/Users/jiezhou/herdr-ink-study/layouts/ink-study.json`；主题：`/Users/jiezhou/herdr-ink-study/themes/ink-study.json`。
+- 正式布局：`layouts/ink-study.json`；主题：`themes/ink-study.json`。
 - 六个模块 ink-spaces、ink-agents、ink-tabs、ink-pane、ink-chrome、ink-status，复制修改自本机Herdr 0.1.13。
-- 墨迹与墨圈从用户参考图提取透明通道；竹材纹理与束绳来自Titus Tscharntke公共领域摄影。来源见 `/Users/jiezhou/herdr-ink-study/ART-NOTICE.md`。
+- 墨迹与墨圈从用户参考图提取透明通道；竹材纹理与束绳来自Titus Tscharntke公共领域摄影。来源见 `ART-NOTICE.md`。
 - `image()` 把墨迹置于行底层，`on_hover` 更新悬停对象并通知重绘，底纹保持淡色，墨框图片opacity根据选中与悬停变化。
 - 工作环为 `svg("mods/ink-chrome/art/ink-ring-v9.svg").spin(1600)`，无需四分之一圆逐段切换。
 - 统一山水挂在work-body，root terminal_opacity为0.24。菜单、文件、变更和底部状态栏克隆为ink-status，保留功能并改用笔墨分隔线。
@@ -70,16 +70,22 @@
 
 Agent 主卡片为「小物件 + 会话名 + 状态」，不再显示工作区文字前缀、Agent 程序名或状态持续时间。真实 pi.session_name 优先，其次手动标签名、去除 π / 程序前缀后的终端标题；会话名弹性占位，悬停可看完整标题，物件悬停显示工作区名称。没有命名的会话沿用清理后的终端标题，不生成新名称。子Agent展开、固定、聚焦、状态墨环与仙鹤保留。后续无需运行早期 build_layout.py 覆盖模块。
 
-已热更新到当前 ink-study 窗口，无需 Pi /reload。当前截图：/Users/jiezhou/herdr-ink-study/sidebar-after-v15.png；小物件总览：/Users/jiezhou/herdr-ink-study/space-objects-v15.png。原生模块检查、13组数据分支以及稳定图案/标题来源/窄侧栏渲染检查通过。
+已热更新到当前 ink-study 窗口，无需 Pi /reload。当前截图：preview.png；小物件总览：mods/ink-chrome/art/object-v16-inkstone.png。原生模块检查、13组数据分支以及稳定图案/标题来源/窄侧栏渲染检查通过。
 
 
 当前小物件 v16（替代 v15 外观）：15 个物件全部重新绘制为单色毛笔水墨小品。以变化的笔压、浓淡积墨、散锋、飞白与淡墨铺色表现轮廓；透明底，无材质渐变、立体高光或物体投影。生成器为 scripts/make_space_objects.py，使用 Pillow 与 numpy。新版素材为 mods/ink-chrome/art/object-v16-*.png，原有工作区分配、24px占位与会话排版保持。
 
-已热更新并检查当前原生侧栏，窗口错误为空。实际截图：/Users/jiezhou/herdr-ink-study/sidebar-detail-v16.png；15种物件总览（附24px小样）：/Users/jiezhou/herdr-ink-study/space-objects-v16.png。
+已热更新并检查当前原生侧栏，窗口错误为空。实际截图：sidebar-detail-v16.png；15种物件总览（附24px小样）：space-objects-v16.png。
 
 
 Current selection style v17 (supersedes alternating row backgrounds): expanded Space and Agent rows use stroke-alt-v3.png by default; only the selected row uses stroke-v3.png. Hover keeps the default shape and reveals the existing ink frame. Changing selection restores the old row to the default shape and retains the crane arrival animation, finite playback and cancellation behavior.
 
 Ink opacity is slightly deeper: 0.065 -> 0.085, identical across selected, unselected and hovered states. Bamboo-v17 textures add a 3% muted ink tint (about five RGB levels darker), retaining grain, bindings, alpha, dimensions and active/hover opacity. Regenerate with scripts/deepen_bamboo.py from the original bamboo-v9 textures.
 
-Native screenshot: /Users/jiezhou/herdr-ink-study/selection-after-v17.png. Native checks, 13 fixture branches and render-event checks passed, including selection shape changes, restoring previous rows, hover stability and crane rapid-switch cancellation. Installed live; no Pi reload required.
+Native screenshot: preview.png. Native checks, 13 fixture branches and render-event checks passed, including selection shape changes, restoring previous rows, hover stability and crane rapid-switch cancellation. Installed live; no Pi reload required.
+
+当前标签以深墨竹叶替代序号；未选中标签继续显示原来的水墨序号。图标与数字同占20×18px，不改变标题和右侧按钮的位置；切换后原标签恢复数字。
+
+当前选中标签使用F鹤羽（真实FLUX.1-schnell原画转换的灰阶路径SVG），替换之前竹叶。未选中标签仍显示数字序号，20×18占位及切换行为保持不变。
+
+当前选中标签鹤羽已换为用户配置 codex/gpt-image-2 生成的透明PNG，保留原墨色和透明度，仅缩小素材以用于界面；20×18占位及其他标签数字序号不变。

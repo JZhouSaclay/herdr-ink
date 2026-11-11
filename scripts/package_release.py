@@ -9,6 +9,10 @@ files += [ROOT/n for n in ('selection-after-v17.png','selection-sidebar-v17.png'
 files += [ROOT/n for n in ('CHECKPOINTS.md','V18-REVIEW.md','DESIGN-V18.md','checkpoint-manifest.json','checkpoint-v18.json','native-review-v18.json','restore-proof-v18.json','footer-icons-v18.png','ink-study-v18-native.png','ink-study-v18-footer.png','ink-study-v18-corner.png')]
 files += [ROOT/n for n in ('CURSOR-REVIEW.md','CURSOR-DESIGN.md','checkpoint-cursor.json','cursor-native-review.json','restore-proof-cursor.json','cursor-bar-native.png','cursor-bar-detail.png','cursor-bar-typed-detail.png','cursor-reload-proof.json','cursor-reload-fixed-detail.png','cursor-position-proof.json','cursor-position-sequence-proof.json')]
 files += [p for p in (ROOT/'integrations').rglob('*') if p.is_file()]
+files += [ROOT/n for n in ('tab-leaf-native-v19.png','tab-leaf-detail-v19.png','tab-leaf-verification-v19.json')]
+files += [ROOT/n for n in ('tab-feather-native-v22.png','tab-feather-detail-v22.png','tab-feather-verification-v22.json')]
+files += [ROOT/n for n in ('tab-gpt-feather-native-v23.png','tab-gpt-feather-detail-v23.png','tab-gpt-feather-verification-v23.json')]
+files += [ROOT/'scroll-wrap-comparison-v25.png',ROOT/'scroll-native-review-v25.json']
 files+=list((ROOT/'layouts').glob('*'))+list((ROOT/'themes').glob('*'))
 for pattern in ('*.py','*.mjs','*.js','*.json'):files+=list((ROOT/'scripts').glob(pattern))
 files+=[ROOT/'reference'/n for n in ('ink-reference.png','bamboo-table.jpg','crane-ink-reference.png','Zhi-Mang-Xing-brand.ttf','zhimangxing-OFL.txt')]
@@ -16,7 +20,7 @@ files+=[ROOT/'reference'/n for n in ('ink-reference.png','bamboo-table.jpg','cra
 # also need source assets which are no longer referenced by the active layout.
 assets=set(p for p in (ROOT/'mods/ink-chrome/art').iterdir() if p.is_file())
 for folder in (ROOT/'mods').iterdir():
-    files+=[folder/'mod.json']+list(folder.glob('*.js'))+list((folder/'fonts').glob('*'))
+    files+=[folder/'mod.json']+list(folder.glob('*.js'))+list(folder.glob('*.svg'))+list((folder/'fonts').glob('*'))
     for source in folder.glob('*.js'):
         for name in re.findall(r'mods/ink-chrome/art/([A-Za-z0-9._-]+)',source.read_text()):
             if name.endswith('-'):assets.update((ROOT/'mods/ink-chrome/art').glob(name+'*.png'))
@@ -33,7 +37,7 @@ with zipfile.ZipFile(ROOT/'ink-study.zip','w',zipfile.ZIP_DEFLATED) as z:
 with zipfile.ZipFile(ROOT/'ink-study.zip') as z:
     assert z.testzip() is None
     names=z.namelist()
-    assert len([n for n in names if n.startswith('mods/') and n.endswith('/main.js')])==6
+    assert len([n for n in names if n.startswith('mods/') and n.endswith('/main.js')])==8
     assert not any(n.startswith(('.review-home','data/','backups/')) or n.endswith('.d.ts') for n in names)
     assert all(f'mods/ink-chrome/art/ink-number-v11-{i}.png' in names for i in range(1,16))
     assert 'mods/ink-chrome/art/landscape-v11.png' in names

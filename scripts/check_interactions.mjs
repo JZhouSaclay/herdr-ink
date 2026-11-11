@@ -89,7 +89,16 @@ assert.ok(Object.hasOwn(titleNode.styles,'flex_1'),'title fills available width'
 assert.ok(Object.hasOwn(row(rendered,'tab-actions-tab-a').styles,'flex_none'),'actions do not shrink');
 assert.ok(row(rendered,'tab-tab-a').nodes.at(-1).styles.id==='tab-actions-tab-a','actions occupy the trailing slot');
 assert.equal(row(rendered,'tab-status-tab-a').styles.size,16,'status slot keeps a fixed width');
-assert.ok(find(row(rendered,'tab-tab-a'),n=>n.kind==='image'&&n.arg.endsWith('ink-number-v11-1.png')),'brush numeral restored');
+assert.ok(find(row(rendered,'tab-tab-a'),n=>n.kind==='image'&&n.arg.endsWith('tab-feather-dark-v24.png')),'selected tab uses generated crane feather');
+assert.ok(!find(row(rendered,'tab-tab-a'),n=>n.kind==='image'&&n.arg.includes('ink-number-v11-')),'selected tab hides numeral');
+assert.ok(find(row(rendered,'tab-tab-b'),n=>n.kind==='image'&&n.arg.endsWith('ink-number-v11-2.png')),'inactive tab keeps numeral');
+const leafCheckTabs=fixture.spaces().find(s=>s.active).tabs;
+const leafCheckState=leafCheckTabs.map(t=>t.active);
+leafCheckTabs.forEach(t=>{t.active=t.id==='tab-b';});
+const switchedLeaf=tabs.render(cx);
+assert.ok(find(row(switchedLeaf,'tab-tab-a'),n=>n.kind==='image'&&n.arg.endsWith('ink-number-v11-1.png')),'previously active tab restores numeral');
+assert.ok(find(row(switchedLeaf,'tab-tab-b'),n=>n.kind==='image'&&n.arg.endsWith('tab-feather-dark-v24.png')),'feather follows new selection');
+leafCheckTabs.forEach((t,i)=>{t.active=leafCheckState[i];});
 const idleCard=row(load('ink-agents').render(cx),'ag-demo-d');
 assert.ok(find(idleCard,n=>n.kind==='svg'&&n.arg.endsWith('ink-seal-v9.svg')),'idle uses a brush seal');
 assert.ok(find(idleCard,n=>n.nodes?.includes('闲')),'idle clearly says 闲');

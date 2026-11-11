@@ -71,7 +71,7 @@ export default class Tabs extends View {
           else run("tab.select", { id: c.id });
         })
         .on_mouse_down("right", (_e, cx) => { cx.stop_propagation(); openOverlay({ mod: "menu", kind: "popup", width: 200, props: { tab: "tab", target: { id: c.id, space: space.id } } }); })
-        .child(i < 15 ? image(`mods/ink-chrome/art/ink-number-v11-${i+1}.png`).relative().w(20).h(18).flex_none().opacity(.78).tooltip(`标签 ${i+1}`) : div().relative().w(20).flex_none().text_size(11).child(String(i+1)))
+        .child(c.active ? image("mods/ink-chrome/art/tab-feather-dark-v24.png").relative().w(20).h(18).flex_none().tooltip(`当前标签 · ${i+1}`) : i < 15 ? image(`mods/ink-chrome/art/ink-number-v11-${i+1}.png`).relative().w(20).h(18).flex_none().opacity(.78).tooltip(`标签 ${i+1}`) : div().relative().w(20).flex_none().text_size(11).child(String(i+1)))
         .child(div().relative().flex_1().min_w(0).font_family("LXGW WenKai Mono").text_size(14).tooltip(name).truncate().child(c.zoomed ? `${name} Z` : name))
         .when(c.active, el => el.child(image("mods/ink-chrome/art/stroke-v3.png").absolute().left(18).right(18).bottom(1).h(4).opacity(0.7)))
         .child(h_flex().id(`tab-actions-${c.id}`).relative().flex_none().gap(6).items_center()

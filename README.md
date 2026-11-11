@@ -1,12 +1,12 @@
-光标候选版 `ink-study-v18-cursor` 增加原生墨绿细竖线，说明见 `/Users/jiezhou/herdr-ink-study/CURSOR-REVIEW.md`。
+光标候选版 `ink-study-v18-cursor` 增加原生墨绿细竖线，说明见 `CURSOR-REVIEW.md`。
 
-当前候选版为 **v18**：移除两行常驻信息、补齐水墨 footer 图标与左上淡竹。原 `ink-study-v17` 稳定标签保留。完整安装、已有会话重载与跨版本恢复见 `/Users/jiezhou/herdr-ink-study/V18-REVIEW.md`。
+当前候选版为 **v18**：移除两行常驻信息、补齐水墨 footer 图标与左上淡竹。原 `ink-study-v17` 稳定标签保留。完整安装、已有会话重载与跨版本恢复见 `V18-REVIEW.md`。
 
 # 水墨书斋 · Ink Study
 
 Herdr 0.1.13 的独立个人布局。当前版采用更明亮的近白纸色、用户参考图中的实际笔触、带竹纹和束绳的单片竹简标签，以及旋转墨圈。
 
-![原生预览，使用示例数据](preview-v7.png)
+![原生预览，使用示例数据](preview.png)
 
 ## 本版调整
 
@@ -20,16 +20,16 @@ Herdr 0.1.13 的独立个人布局。当前版采用更明亮的近白纸色、�
 
 ## 文件
 
-- 正式布局：`/Users/jiezhou/herdr-ink-study/layouts/ink-study.json`
-- 主题：`/Users/jiezhou/herdr-ink-study/themes/ink-study.json`
-- 原生截图：`/Users/jiezhou/herdr-ink-study/preview-v7.png`
-- 状态笔触动图：`/Users/jiezhou/herdr-ink-study/ink-ring-preview.gif`
-- 检查报告：`/Users/jiezhou/herdr-ink-study/verification.txt`
-- 独立布局包：`/Users/jiezhou/herdr-ink-study/ink-study.zip`
+- 正式布局：`layouts/ink-study.json`
+- 主题：`themes/ink-study.json`
+- 原生截图：`preview.png`
+- 状态笔触动图：`ink-ring-preview.gif`
+- 检查报告：`verification.txt`
+- 独立布局包：`ink-study.zip`
 
 ## 素材与权限
 
-墨痕和墨圈来自用户提供的参考图，竹材来自公共领域摄影，详见 `/Users/jiezhou/herdr-ink-study/ART-NOTICE.md`。山水与纸纹由本项目脚本生成；没有复制 Traveler 的美术。
+墨痕和墨圈来自用户提供的参考图，竹材来自公共领域摄影，详见 `ART-NOTICE.md`。山水与纸纹由本项目脚本生成；没有复制 Traveler 的美术。
 
 五个模块分别基于 Herdr 0.1.13 的 spaces、agents、tabs、pane、workspace-chrome 独立修改。保留工作区选择、Git 状态、拖动排序、Agent 聚焦与子 Agent、标签改名与关闭、分屏控制等操作。
 
@@ -48,13 +48,13 @@ ink-spaces 沿用原模块的 Git 与 hc 查询，读取工作区仓库状态；
 需要 Herdr、Node.js、Python 3、Pillow、numpy。脚本从本机 Herdr 0.1.13 模块构建，只写本项目和临时检查目录。
 
 ```sh
-python3 /Users/jiezhou/herdr-ink-study/scripts/make_art.py
-python3 /Users/jiezhou/herdr-ink-study/scripts/refine_art.py
-python3 /Users/jiezhou/herdr-ink-study/scripts/reference_art.py
-python3 /Users/jiezhou/herdr-ink-study/scripts/make_crane.py
-python3 /Users/jiezhou/herdr-ink-study/scripts/build_layout.py
-python3 /Users/jiezhou/herdr-ink-study/scripts/prepare_review.py
-python3 /Users/jiezhou/herdr-ink-study/scripts/verify.py
+python3 scripts/make_art.py
+python3 scripts/refine_art.py
+python3 scripts/reference_art.py
+python3 scripts/make_crane.py
+python3 scripts/build_layout.py
+python3 scripts/prepare_review.py
+python3 scripts/verify.py
 ```
 
 脚本不是安装程序。后续安装只复制正式 layouts、themes 和五个 ink-* 模块，先检查同名目标，禁止覆盖。`.review-home` 是虚构数据的验图环境，不应安装。
@@ -67,17 +67,17 @@ python3 /Users/jiezhou/herdr-ink-study/scripts/verify.py
 - 每次重新选中建立新的播放节点ID。快速切换会取消旧期限，旧回调还带代次校验；已收起、关闭或切换的实例不会影响新动作。
 - 初次显示时已有选中项直接静止；悬停、工作状态更新和重复布局不会重播动作。
 - 小鹤在36×34px的裁切区内，显示34×33px；Space/Agent内容右侧分别留44/46px。底纹继续保持0.10淡墨，不遮挡名字或状态。
-- `/Users/jiezhou/herdr-ink-study/crane-arrival-preview-v8.gif`：同素材的放大动作预览。
-- `/Users/jiezhou/herdr-ink-study/crane-poses-v8.png`：01–06六个关键姿态及时间点。
-- `/Users/jiezhou/herdr-ink-study/crane-native-preview.gif`：旧版v7独立Herdr窗口实际录制，虚构数据；27次截图包含10个不同的角落画面，连续原生动效已复核。
+- `mods/ink-chrome/art/crane-arrival-ink-left-v8.gif`：同素材的放大动作预览。
+- `crane-poses-v8.png`：01–06六个关键姿态及时间点。
+- `crane-native-preview.gif`：旧版v7独立Herdr窗口实际录制，虚构数据；27次截图包含10个不同的角落画面，连续原生动效已复核。
 - 五个模块、13组原生分支、有限播放和快速切换检查通过；终态图在三条腿部扫描线上都只有一个支撑腿墨迹连通段。
 
-可选原生复录：在生成review与验证之后运行 `/Users/jiezhou/herdr-ink-study/scripts/enable_motion_review.py`，以该review home打开独立Herdr窗口，运行 `/Users/jiezhou/herdr-ink-study/scripts/capture_crane.py`。控制器只改变虚构的预览选中项。重新执行prepare_review会恢复普通测试环境。
+可选原生复录：在生成review与验证之后运行 `scripts/enable_motion_review.py`，以该review home打开独立Herdr窗口，运行 `scripts/capture_crane.py`。控制器只改变虚构的预览选中项。重新执行prepare_review会恢复普通测试环境。
 
 
 当前界面修订 v9：竹简容器40px，宽112–192px，并按宽度匹配材质图比例；空闲使用「闲」字水墨小印。应用侧栏、标题与状态栏的分隔线取自原墨迹扫描，按宽高自适应绘制，去掉终端pane的几何实线外框。进行中的水墨环改为保留原笔触的SVG，原生spin(1600)连续旋转；PNG不适用该旋转接口。真实窗口12帧均有不同旋转角度，见ring-native-proof-v9.gif。
 
-布局现含六个个人模块，增加ink-status以保留原状态栏功能并修改其分隔线；Herdr自带模块未修改。终端程序内部的表格、输入框和横线仍由程序自己绘制。静态preview-v7.png为早期示例总览，以当前安装界面为准。后续定制直接维护mods和layouts；build_layout.py为早期生成器，不用于覆盖当前模块。
+布局现含六个个人模块，增加ink-status以保留原状态栏功能并修改其分隔线；Herdr自带模块未修改。终端程序内部的表格、输入框和横线仍由程序自己绘制。静态preview.png为早期示例总览，以当前安装界面为准。后续定制直接维护mods和layouts；build_layout.py为早期生成器，不用于覆盖当前模块。
 
 当前标签排版 v10：取消前置两位序号，标题使用14px宋体并弹性占位；状态和关闭按钮作为独立右侧操作区，状态固定16px、关闭固定18px，隐藏关闭时仍留位。竹简形状与40px高度沿用v9。
 
@@ -99,16 +99,26 @@ Pi 会话样式来自本机 pretty-tui 扩展，配置 `inkStyle: true`：浅色
 
 Agent 主卡片为「小物件 + 会话名 + 状态」，不再显示工作区文字前缀、Agent 程序名或状态持续时间。真实 pi.session_name 优先，其次手动标签名、去除 π / 程序前缀后的终端标题；会话名弹性占位，悬停可看完整标题，物件悬停显示工作区名称。没有命名的会话沿用清理后的终端标题，不生成新名称。子Agent展开、固定、聚焦、状态墨环与仙鹤保留。后续无需运行早期 build_layout.py 覆盖模块。
 
-已热更新到当前 ink-study 窗口，无需 Pi /reload。当前截图：/Users/jiezhou/herdr-ink-study/sidebar-after-v15.png；小物件总览：/Users/jiezhou/herdr-ink-study/space-objects-v15.png。原生模块检查、13组数据分支以及稳定图案/标题来源/窄侧栏渲染检查通过。
+已热更新到当前 ink-study 窗口，无需 Pi /reload。当前截图：preview.png；小物件总览：mods/ink-chrome/art/object-v16-inkstone.png。原生模块检查、13组数据分支以及稳定图案/标题来源/窄侧栏渲染检查通过。
 
 
 当前小物件 v16（替代 v15 外观）：15 个物件全部重新绘制为单色毛笔水墨小品。以变化的笔压、浓淡积墨、散锋、飞白与淡墨铺色表现轮廓；透明底，无材质渐变、立体高光或物体投影。生成器为 scripts/make_space_objects.py，使用 Pillow 与 numpy。新版素材为 mods/ink-chrome/art/object-v16-*.png，原有工作区分配、24px占位与会话排版保持。
 
-已热更新并检查当前原生侧栏，窗口错误为空。实际截图：/Users/jiezhou/herdr-ink-study/sidebar-detail-v16.png；15种物件总览（附24px小样）：/Users/jiezhou/herdr-ink-study/space-objects-v16.png。
+已热更新并检查当前原生侧栏，窗口错误为空。实际截图：sidebar-detail-v16.png；15种物件总览（附24px小样）：space-objects-v16.png。
 
 
 Current selection style v17 (supersedes alternating row backgrounds): expanded Space and Agent rows use stroke-alt-v3.png by default; only the selected row uses stroke-v3.png. Hover keeps the default shape and reveals the existing ink frame. Changing selection restores the old row to the default shape and retains the crane arrival animation, finite playback and cancellation behavior.
 
 Ink opacity is slightly deeper: 0.065 -> 0.085, identical across selected, unselected and hovered states. Bamboo-v17 textures add a 3% muted ink tint (about five RGB levels darker), retaining grain, bindings, alpha, dimensions and active/hover opacity. Regenerate with scripts/deepen_bamboo.py from the original bamboo-v9 textures.
 
-Native screenshot: /Users/jiezhou/herdr-ink-study/selection-after-v17.png. Native checks, 13 fixture branches and render-event checks passed, including selection shape changes, restoring previous rows, hover stability and crane rapid-switch cancellation. Installed live; no Pi reload required.
+Native screenshot: preview.png. Native checks, 13 fixture branches and render-event checks passed, including selection shape changes, restoring previous rows, hover stability and crane rapid-switch cancellation. Installed live; no Pi reload required.
+
+当前标签以深墨竹叶替代序号；未选中标签继续显示原来的水墨序号。图标与数字同占20×18px，不改变标题和右侧按钮的位置；切换后原标签恢复数字。
+
+当前选中标签使用F鹤羽（真实FLUX.1-schnell原画转换的灰阶路径SVG），替换之前竹叶。未选中标签仍显示数字序号，20×18占位及切换行为保持不变。
+
+当前选中标签鹤羽已换为用户配置 codex/gpt-image-2 生成的透明PNG，保留原墨色和透明度，仅缩小素材以用于界面；20×18占位及其他标签数字序号不变。
+
+鹤羽对比度v24：增强灰墨与透明度，让小尺寸羽片更清晰；保持原轮廓、飞白和20×18占位。
+
+书卷侧栏 v25：个人 ink-files / ink-changes 模块，文件和变更均使用 GPT Image 2 生成的书卷装饰。上下轴固定高度、边缘按窗口铺展，纸面保持留白。文件预览开启原生只读软换行，保留选择复制、行号和语法色；变更列表按行实际高度懒加载，保留增删颜色与行号并在侧栏宽度内折行。原生窄栏和宽栏对照已验证。

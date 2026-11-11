@@ -13,3 +13,18 @@
 .DS_Store
 mods/**/*.d.ts
 mods/**/jsconfig.json
+# Local review artifacts and generated previews
+/.pi-*-review/
+/.pre-scroll-status.json
+/review.log
+/*.pid
+/*.log
+/brand-options-*.png
+/installed-*.png
+/sidebar-*.png
+/selection-*.png
+/cursor-*.png
+/scroll-*.png
+/tab-*-native-*.png
+/tab-*-detail-*.png
+/tab-*-verification-*.json

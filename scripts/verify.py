@@ -73,5 +73,7 @@ report.append('PASS layout / unique IDs, shared art container, transparent pane 
 report.append('PASS contrast / all six UI text roles >= 4.5:1 on sidebar paper')
 events=subprocess.run(['node',str(ROOT/'scripts/check_interactions.mjs')],check=True,capture_output=True,text=True)
 report.extend(events.stdout.strip().splitlines())
+scroll=subprocess.run(['node',str(ROOT/'scripts/check_scroll.mjs')],check=True,capture_output=True,text=True)
+report.extend(scroll.stdout.strip().splitlines())
 (ROOT/'verification.txt').write_text('\n'.join(report)+'\n')
 print('\n'.join(report))
