@@ -68,6 +68,12 @@ for(const [name,id,selected] of [['ink-spaces','space-space-b','space-space-a'],
     assert.equal(find(tree,n=>/^sec-/.test(n.styles?.id??'')),null,'no priority section headings');
     const working=row(tree,'ag-demo-a');
     assert.ok(find(working,n=>n.kind==='svg'&&n.arg.endsWith('ink-ring-v9.svg')&&n.styles.spin===1600),'ink arc rotates');
+    const card=row(tree,'ag-demo-b'), shell=find(tree,n=>n.nodes?.includes(card));
+    assert.ok(shell,'agent row has its own shell');
+    assert.equal(shell.styles.h,40,'row pitch comes from a 40-high shell the list can measure');
+    assert.ok(Object.hasOwn(shell.styles,'flex_none'),'shell keeps its height in the list');
+    assert.ok(Object.hasOwn(card.styles,'absolute'),'row is positioned inside the shell');
+    assert.equal(card.styles.mb,undefined,'no negative margin: it hides content height from the scroll area');
   }
   console.log('PASS real render events / '+name+' / selection-based ink shape, slightly deeper ink, hover frame, exit, selected frame');
 }
@@ -87,6 +93,7 @@ assert.ok(titleNode,'title uses Songti');
 assert.equal(titleNode.styles.min_w,0,'long labels truncate without moving actions');
 assert.ok(Object.hasOwn(titleNode.styles,'flex_1'),'title fills available width');
 assert.ok(Object.hasOwn(row(rendered,'tab-actions-tab-a').styles,'flex_none'),'actions do not shrink');
+assert.ok(find(row(rendered,'tab-scroll'),n=>n.styles?.id==='tab-new'),'新建标签按钮随标签横向滚动，不冻结在栏尾');
 assert.ok(row(rendered,'tab-tab-a').nodes.at(-1).styles.id==='tab-actions-tab-a','actions occupy the trailing slot');
 assert.equal(row(rendered,'tab-status-tab-a').styles.size,16,'status slot keeps a fixed width');
 assert.ok(find(row(rendered,'tab-tab-a'),n=>n.kind==='image'&&n.arg.endsWith('tab-feather-dark-v24.png')),'selected tab uses generated crane feather');

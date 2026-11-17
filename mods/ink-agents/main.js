@@ -312,10 +312,9 @@ export default class Agents extends View {
           cx.notify();
         })
         .child(svg(`mods/workspace-chrome/${isPinned ? "pin-off" : "pin"}.svg`).size(13));
-      return h_flex()
+      const row = h_flex()
         .id(`ag-${a.address}`)
         .relative()
-        .mb(-4)
         .pl(10).pr(46)
         .h(44)
         .flex_none()
@@ -340,6 +339,10 @@ export default class Agents extends View {
         .when(subs.length > 0, el => el.child(fold(a, subs)))
         .when(this.hovered === a.address, el => el.child(pin))
         .child(this.status(t, a, byPriority && !isPinned));
+
+      // 行高 44，行距 40：多出的 4px 叠到下一行上。负 margin 会让滚动区域量不出
+      // 内容高度，列表就滚不动，所以用外层 40 高的盒子定行距、行本身绝对定位。
+      return div().relative().h(40).flex_none().child(row.absolute().left(0).right(0).top(0));
     };
 
     // Groups in list order: spaces (grouped) or priority sections. Agents of a

@@ -27,4 +27,4 @@ PASS real render events / ink-tabs / taller proportioned bamboo, hover, safe clo
 PASS crane sequence / ink-spaces / left-facing GIF, 2000ms stop at flight pose 06, reselection, stale cancellation, text clearance
 PASS crane sequence / ink-agents / left-facing GIF, 2000ms stop at flight pose 06, reselection, stale cancellation, text clearance
 PASS sidebar objects / stable across rename, reorder and grouping; fixed width; Pi prefix and age removed; real session metadata; narrow rail
-PASS scroll / readonly native soft wrap, unmodified source, stale read protection, diff line numbering and variable-height untruncated rows
+PASS scroll / editable local files, unchanged source text, stale read protection, autosave expected value, refused write, diff line numbering and variable-height untruncated rows
